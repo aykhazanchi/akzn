@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      
+        What I Learned in One Week of Zero Carbs |
+
+      
+      Ayushman Khazanchi
+
+
+    
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.97.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ayushman Khazanchi" />
+  <meta
+    name="description"
+    content="
+      Software &amp; DevOps Engineer.
+    
+
+
+    "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.0f27dafa762d1f577a5fd3c4666cd5ec6bd110cefad4ce2ce05ddca51d634045.css"
+      integrity="sha256-Dyfa&#43;nYtH1d6X9PEZmzV7GvREM761M4s4F3cpR1jQEU="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/syntax.min.b948b4ebe322e6a1a95d585ba9cf7dcf561b9716e190aae110a0a675fb457d4a.css"
+      integrity="sha256-uUi06&#43;Mi5qGpXVhbqc99z1YblxbhkKrhEKCmdftFfUo="
+      crossorigin="anonymous"
+      media="screen"
+    />
+
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/styles.min.1987d9eeed977f7cea53c4eca1d457ef403103a67aa6d285ad3d77bc5ed09bed.css"
+      integrity="sha256-GYfZ7u2Xf3zqU8TsodRX70AxA6Z6ptKFrT13vF7Qm&#43;0="
+      crossorigin="anonymous"
+      media="screen"
+    />
+
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.b1c4e6a10bdbab01f33fff9d78816ee68cf9a9a731f07668afd546a79924cb80.css"
+    integrity="sha256-scTmoQvbqwHzP/&#43;deIFu5oz5qacx8HZor9VGp5kky4A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.423dee17c62f55fa733a4ee13e00d523dfce88cc4f4ab4549a24ba36bd9de681.css"
+    integrity="sha256-Qj3uF8YvVfpzOk7hPgDVI9/OiMxPSrRUmiS6Nr2d5oE="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.b7d54133b27e5b4de15245b8e143de3e8ed2d674c706137274cedc9953f31917.css"
+    integrity="sha256-t9VBM7J&#43;W03hUkW44UPePo7S1nTHBhNydM7cmVPzGRc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT&#43;Serif&amp;family=PT&#43;Sans&#43;Narrow:wght@400;700&amp;family=Fira&#43;Mono&amp;display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://akzn.me/blog/what-i-learned-in-one-week-of-zero-carbs/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.560a26330d27ff44a44e83b53cd07a95d4230a65930d31c5c76a8d481e5b35bf.js"
+      integrity="sha256-VgomMw0n/0SkToO1PNB6ldQjCmWTDTHFx2qNSB5bNb8="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://akzn.me/blog/what-i-learned-in-one-week-of-zero-carbs/images/"/>
+
+<meta name="twitter:title" content="What I Learned in One Week of Zero Carbs"/>
+<meta name="twitter:description" content="Last Monday (Jan. 11th) I decided to quit eating carbs for one week."/>
+<meta name="twitter:site" content="@aykhazanchi"/>
+
+
+
+  
+  <meta property="og:title" content="What I Learned in One Week of Zero Carbs" />
+<meta property="og:description" content="Last Monday (Jan. 11th) I decided to quit eating carbs for one week." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akzn.me/blog/what-i-learned-in-one-week-of-zero-carbs/" /><meta property="og:image" content="https://akzn.me/blog/what-i-learned-in-one-week-of-zero-carbs/images/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-01-18T00:00:00+00:00" /><meta property="og:site_name" content="Ayushman Khazanchi" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "blog",
+        "name": "What I Learned in One Week of Zero Carbs",
+        "headline": "What I Learned in One Week of Zero Carbs",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Last Monday (Jan. 11th) I decided to quit eating carbs for one week.
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/akzn.me\/blog\/what-i-learned-in-one-week-of-zero-carbs\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "copyrightYear" : "2016",
+        "dateCreated": "2016-01-18T00:00:00.00Z",
+        "datePublished": "2016-01-18T00:00:00.00Z",
+        "dateModified": "2016-01-18T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ayushman Khazanchi",
+            "url": "https://akzn.me/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/akzn.me\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://akzn.me/blog/what-i-learned-in-one-week-of-zero-carbs/images/"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/akzn.me\/blog\/what-i-learned-in-one-week-of-zero-carbs\/",
+        "wordCount" : "1245",
+        "genre" : [ 
+      
+      "general"
+
+    ],
+        "keywords" : [ 
+      
+      "carbs"
+
+    
+      
+        ,
+
+      
+      "diet"
+
+    
+      
+        ,
+
+      
+      "experiment"
+
+    
+      
+        ,
+
+      
+      "food"
+
+    
+      
+        ,
+
+      
+      "low-carbs"
+
+    
+      
+        ,
+
+      
+      "nutrition"
+
+    
+      
+        ,
+
+      
+      "food hack"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<div>
+  <img src="/images/mariannizmo.png" width="100%" height="75vh"/>
+</div><body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/me.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Ayushman Khazanchi</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>Software & DevOps Engineer.<br />    </p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a href="mailto:aykhazanchi@gmail.com" rel="me" aria-label="e-mail" title="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://github.com/aykhazanchi" rel="me" aria-label="github" title="github">
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://linkedin.com/in/aykhazanchi" rel="me" aria-label="linkedin" title="linkedin">
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://instagram.com/aykhazanchi" rel="me" aria-label="instagram" title="instagram">
+            <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://www.goodreads.com/aykhazanchi" rel="me" aria-label="goodreads" title="goodreads">
+            <i class="fab fa-goodreads fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://www.akzn.me/blog/index.xml" rel="me" aria-label="rss" title="rss">
+            <i class="fa-solid fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ayushman Khazanchi
+        2022
+
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/code/"
+              
+              title=""
+              >Code</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/blog/"
+              
+              title=""
+              >Blog</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/food/"
+              
+              title=""
+              >Food</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/photos/"
+              
+              title=""
+              >Photos</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/now/"
+              
+              title=""
+              >Now</a
+            >
+          </li>
+
+        
+
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+      <div class="post__thumbnail-wrapper">
+        <img class="post__thumbnail" src="/blog/what-i-learned-in-one-week-of-zero-carbs/images/" alt="Thumbnail image" />
+      </div>
+
+    
+    <div class="post__content">
+      <h1>What I Learned in One Week of Zero Carbs</h1>
+      <p>Last Monday (Jan. 11th) I decided to quit eating carbs for one week. My first encounter with this was a couple of years ago, sitting on a family friend&rsquo;s couch, reading about Djokovic&rsquo;s diet that propelled him, within a year, to the top rank. All he did was quit gluten completely and found himself getting stronger everyday. Just one change in diet having that big an effect made me a little skeptical but it stuck around in the back of my mind. Leading up to last week, I&rsquo;d been reading a lot about the effects of certain food groups on the body. Carbs just stood out as the one group that a lot of people had reduced and felt noticeable improvements with. Now, I had no obvious reason to quit carbs. I&rsquo;m not trying to lose weight. I&rsquo;m generally healthy and I tend to eat healthier, home-cooked food more than eating outside. I just wanted to see how much it really affected my body. One of the only triggers beforehand was that I was frequently tired, not only after a full work day but also many times during it.</p>
+<p>I read a lot about how people had reduced their carb intake, anywhere from 100 gm. to 200 gm. a day, and seen noticeable improvements. I figured it&rsquo;d be a pain to keep calculating before each meal how many grams I had left for the day so I decided to go nuclear. For the sake of removing any calculations I decided to do zero carbs for the whole week. Also to ease up on the complexity I focused only on complex-sugar carbs - any kind of breads, pasta, cereal, noodles, rice, sugar, cookies, brownies, dried fruits, etc. I usually don&rsquo;t snack much so most of these weren&rsquo;t a big issue for me. But when you&rsquo;re eating outside at least 4-5 times a week you realize pretty fast how impractical it is to stick to zero carb diets outside your own cooking. To compound that, rice or some kind of bread (roti/paratha/naan) is almost a staple for most Indian meals.</p>
+<p><img src="images/carbs-carbs-everywhere.jpg" alt=""></p>
+<p>The first two days took a little getting used to. I experienced a minor headache the entire day on my first day. I figured it was because of the lesser calories I was now eating so I upped the protein in my breakfast the next day. The headache was a lot less noticeable the second day and completely gone by the third. My eating out is generally restricted to going out for lunch with coworkers and I realized that sticking to a no-carb diet wasn&rsquo;t going to be so easy.</p>
+<p>I had to switch out rice for lettuce in my burrito bowls, opt for salad where there was no substitutable option. (I hate lettuce, but oh well.) This was my first real encounter with having to pay attention to how much &ldquo;filler&rdquo; stuff we eat. When you take the rice out of a burrito, for example, it&rsquo;s just a weird looking lump of things awkwardly wrapped inside of a deflating tortilla. (This is just an example, tortillas were forbidden.) Similarly, take any sandwich you can think of and remove the bread. All you&rsquo;re left with is a slice of meat/chicken with some kind of sauce drizzled over it and a bunch of spinach leaves and onions on top. Sounds pretty lame? Yup. The bread makes up at least half the calories of the sandwich. Same situation with any kind of hoagie/cheesesteak/wrap style food. Sushi has rice around it, so do most Indian meals (or at least some kind of bread). Ramen has noodles. Italian is pretty much out the door, unless you only eat meatballs. Same case with most American versions of Mexican and creole food. It took a LOT of creativity and restrictions to be able to buy/makes lunches that had zero carbs. And pair all that with a guy who absolutely could not care less about salads and you have a real situation.</p>
+<p>Despite the struggles, I was able to manage through the week with only once breaking the rule. For Wedneday lunch I caved for a sandwich because I was simply too exhausted of having to explain to the server why I wanted to substitute bread for lettuce wraps. The first few days I was generally hungry even after a meal. I was eating significantly fewer calories, even though I was eating more throughout the day. Still, what I noticed was a significant improvement in general energy levels throughout the day. I suspect this was because carbs tend to exaggerate the afternoon food coma post a heavy lunch. So cutting that out helped quite a bit. It did often get kind of frustrating trying to come up with meals that didn&rsquo;t just default to some kind of grains/noodles. I think this is one of the fundamental reasons why people end up just reducing the carb intake instead of letting it go completely. Also maybe because carbs are just simply delicious.</p>
+<p>I don&rsquo;t think it&rsquo;s practical to cut out carbs completely, but I did have a consistent higher energy level throughout the week. Because I also cut out sugar for the week I noticed that my body wasn&rsquo;t &ldquo;crashing&rdquo; from sugar-highs anymore. I could be back from a full day of work and still be productive till midnight or so. I also think it&rsquo;s one of the most effective ways to lose weight since you&rsquo;re eating fewer calories with every meal. Cutting out just one aspect of a diet as opposed to overhauling it completely is also easier to stick to. I was pretty conscious about this though - I wasn&rsquo;t trying to lose weight so I made sure I ate more small meals through the day to account for the cut in calorie count. That said, I think it&rsquo;s worth it at least once or twice a year to try this and see how your body reacts. I&rsquo;m by no means cutting out carbs completely but I think I&rsquo;ve realized I need to decrease their amount in my diet.</p>
+<p><a href="https://twitter.com/fmanjoo/status/687755569311035392">https://twitter.com/fmanjoo/status/687755569311035392</a></p>
+<p>Couple of pointers and things that I noticed:</p>
+<ul>
+<li>I was focusing only on eradicating complex-sugar carbs and food products where carbs are the primary ingredient (grains, for example). No specific reason, it&rsquo;s just easier to do. Even Kale has carbs, but it&rsquo;s not the majority/primary ingredient.</li>
+<li>The first two or three days generally take getting used to since your body is expecting more food than you&rsquo;re giving it. You might have a minor headache.</li>
+<li>If you stick to your general meal count, you end up eating fewer calories than you normally would. This is because most of the calorie intake happens through high-carb foods like breads, pasta, tortillas, rice, etc.</li>
+<li>You <em>can</em> eat a lot more throughout the day as opposed to two or three big meals since all your meals are now smaller.</li>
+<li>Almost everything I read mentioned the person losing weight when this was followed for longer periods of time. I didn&rsquo;t notice any weight change in one week.</li>
+<li>I felt a lot less tired. This is the single-most vivid and biggest change I noticed. Because the amount of calories going in at once decreased I felt that the general tendency of a minor afternoon workplace food-coma also dramatically decreased. I actually went through a whole day feeling active and energetic throughout.</li>
+<li>Maintaining a zero carb diet can get expensive - you have no &ldquo;filler&rdquo; foods so your general entrée consumption increases.</li>
+</ul>
+<br>
+<hr>
+
+
+
+<h3>Posts in this Series</h3>
+<ul>
+  
+</ul>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/general/">general</a></span>
+
+
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/carbs/">carbs</a><a class="tag" href="/tags/diet/">diet</a><a class="tag" href="/tags/experiment/">experiment</a><a class="tag" href="/tags/food/">food</a><a class="tag" href="/tags/low-carbs/">low-carbs</a><a class="tag" href="/tags/nutrition/">nutrition</a><a class="tag" href="/tags/food-hack/">food hack</a></span>
+
+
+
+
+      
+    </div>
+
+    
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ayushman Khazanchi
+        2022
+
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

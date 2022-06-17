@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  class="html"
+><head>
+  <title>
+    
+      
+        Tiny AES in Python |
+
+      
+      Ayushman Khazanchi
+
+
+    
+  </title>
+
+  
+  <meta charset="utf-8" /><meta name="generator" content="Hugo 0.97.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ayushman Khazanchi" />
+  <meta
+    name="description"
+    content="
+      Software &amp; DevOps Engineer.
+    
+
+
+    "
+  />
+  
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/scss/main.min.0f27dafa762d1f577a5fd3c4666cd5ec6bd110cefad4ce2ce05ddca51d634045.css"
+      integrity="sha256-Dyfa&#43;nYtH1d6X9PEZmzV7GvREM761M4s4F3cpR1jQEU="
+      crossorigin="anonymous"
+      type="text/css"
+    />
+
+  
+
+  
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.31b0a1f317f55c529a460897848c97436bb138b19c399b37de70d463a8bf6ed5.css"
+    integrity="sha256-MbCh8xf1XFKaRgiXhIyXQ2uxOLGcOZs33nDUY6i/btU="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/syntax.min.b948b4ebe322e6a1a95d585ba9cf7dcf561b9716e190aae110a0a675fb457d4a.css"
+      integrity="sha256-uUi06&#43;Mi5qGpXVhbqc99z1YblxbhkKrhEKCmdftFfUo="
+      crossorigin="anonymous"
+      media="screen"
+    />
+
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/styles.min.1987d9eeed977f7cea53c4eca1d457ef403103a67aa6d285ad3d77bc5ed09bed.css"
+      integrity="sha256-GYfZ7u2Xf3zqU8TsodRX70AxA6Z6ptKFrT13vF7Qm&#43;0="
+      crossorigin="anonymous"
+      media="screen"
+    />
+
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.b1c4e6a10bdbab01f33fff9d78816ee68cf9a9a731f07668afd546a79924cb80.css"
+    integrity="sha256-scTmoQvbqwHzP/&#43;deIFu5oz5qacx8HZor9VGp5kky4A="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.423dee17c62f55fa733a4ee13e00d523dfce88cc4f4ab4549a24ba36bd9de681.css"
+    integrity="sha256-Qj3uF8YvVfpzOk7hPgDVI9/OiMxPSrRUmiS6Nr2d5oE="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.b7d54133b27e5b4de15245b8e143de3e8ed2d674c706137274cedc9953f31917.css"
+    integrity="sha256-t9VBM7J&#43;W03hUkW44UPePo7S1nTHBhNydM7cmVPzGRc="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=PT&#43;Serif&amp;family=PT&#43;Sans&#43;Narrow:wght@400;700&amp;family=Fira&#43;Mono&amp;display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://akzn.me/blog/tiny-aes-in-python/" />
+
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.560a26330d27ff44a44e83b53cd07a95d4230a65930d31c5c76a8d481e5b35bf.js"
+      integrity="sha256-VgomMw0n/0SkToO1PNB6ldQjCmWTDTHFx2qNSB5bNb8="
+      crossorigin="anonymous"
+    ></script>
+
+  
+
+  
+
+
+  
+  <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://akzn.me/blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp"/>
+
+<meta name="twitter:title" content="Tiny AES in Python"/>
+<meta name="twitter:description" content="Recently for an Applied Cryptography class at KTH I had to write from scratch an implementation of the AES encryption."/>
+<meta name="twitter:site" content="@aykhazanchi"/>
+
+
+
+  
+  <meta property="og:title" content="Tiny AES in Python" />
+<meta property="og:description" content="Recently for an Applied Cryptography class at KTH I had to write from scratch an implementation of the AES encryption." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://akzn.me/blog/tiny-aes-in-python/" /><meta property="og:image" content="https://akzn.me/blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-04-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-14T00:00:00+00:00" /><meta property="og:site_name" content="Ayushman Khazanchi" />
+
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "blog",
+        "name": "Tiny AES in Python",
+        "headline": "Tiny AES in Python",
+        "alternativeHeadline": "",
+        "description": "
+      
+        Recently for an Applied Cryptography class at KTH I had to write from scratch an implementation of the AES encryption.
+
+
+      
+
+
+    ",
+        "inLanguage": "en",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/akzn.me\/blog\/tiny-aes-in-python\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ayushman Khazanchi"
+        },
+        "copyrightYear" : "2022",
+        "dateCreated": "2022-04-14T00:00:00.00Z",
+        "datePublished": "2022-04-14T00:00:00.00Z",
+        "dateModified": "2022-04-14T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ayushman Khazanchi",
+            "url": "https://akzn.me/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/akzn.me\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://akzn.me/blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/akzn.me\/blog\/tiny-aes-in-python\/",
+        "wordCount" : "1099",
+        "genre" : [ 
+      
+      "code"
+
+    ],
+        "keywords" : [ 
+      
+      "advanced-encryption-standard"
+
+    
+      
+        ,
+
+      
+      "aes"
+
+    
+      
+        ,
+
+      
+      "aes-ecb"
+
+    
+      
+        ,
+
+      
+      "applied-crypto"
+
+    
+      
+        ,
+
+      
+      "code"
+
+    
+      
+        ,
+
+      
+      "cryptography"
+
+    
+      
+        ,
+
+      
+      "encryption"
+
+    
+      
+        ,
+
+      
+      "kth"
+
+    
+      
+        ,
+
+      
+      "kth-royal-institute-of-technology"
+
+    
+      
+        ,
+
+      
+      "python"
+
+    
+      
+        ,
+
+      
+      "security"
+
+    ]
+    }
+  </script>
+
+
+
+</head>
+<div>
+  <img src="/images/mariannizmo.png" width="100%" height="75vh"/>
+</div><body
+    
+      class="body theme--light"
+
+    
+  >
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/me.png"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/">Ayushman Khazanchi</a>
+        </div>
+
+      
+      <div class="sidebar__introduction-description">
+        <p>Software & DevOps Engineer.<br />    </p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a href="mailto:aykhazanchi@gmail.com" rel="me" aria-label="e-mail" title="e-mail">
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://github.com/aykhazanchi" rel="me" aria-label="github" title="github">
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://linkedin.com/in/aykhazanchi" rel="me" aria-label="linkedin" title="linkedin">
+            <i class="fab fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://instagram.com/aykhazanchi" rel="me" aria-label="instagram" title="instagram">
+            <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://www.goodreads.com/aykhazanchi" rel="me" aria-label="goodreads" title="goodreads">
+            <i class="fab fa-goodreads fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+        <li class="sidebar__list-item">
+          <a href="https://www.akzn.me/blog/index.xml" rel="me" aria-label="rss" title="rss">
+            <i class="fa-solid fa-rss fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ayushman Khazanchi
+        2022
+
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/"
+              
+              title=""
+              >Home</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/about/"
+              
+              title=""
+              >About</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/code/"
+              
+              title=""
+              >Code</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/blog/"
+              
+              title=""
+              >Blog</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/food/"
+              
+              title=""
+              >Food</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/photos/"
+              
+              title=""
+              >Photos</a
+            >
+          </li>
+
+        
+
+
+      
+        
+        
+          <li class="nav__list-item">
+            <a
+              
+              href="/now/"
+              
+              title=""
+              >Now</a
+            >
+          </li>
+
+        
+
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+
+    "
+  >
+    
+    <div class="post__content">
+      <h1>Tiny AES in Python</h1>
+      <p>Recently for an Applied Cryptography class at KTH I had to write from scratch an implementation of the AES encryption. AES is a block cypher encryption that operates on blocks of different sizes. I implement AES-128 in ECB mode which takes 16 byte blocks in a matrix of 4 by 4. What follows is a small implementation in Python with some explanations around each AES step.</p>
+<h3 id="overall-structure-of-aes">Overall structure of AES</h3>
+<img align="right" caption="A visualization of the AES round function" alt="A visualization of the AES round function" width="400" height="600" src="/blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp">
+<p>AES is quite a big and detailed process. I won’t go into the details of how each round works as that would require a series of posts instead of one post. Maybe in the future I’ll expand on this. Here is the high-level structure of the algorithm that I got from Wikipedia –</p>
+<ul>
+<li>Key Expansion</li>
+<li>Initial Add Round Key</li>
+<li>9 rounds of –
+<ul>
+<li>Sub Bytes</li>
+<li>Shift Rows</li>
+<li>Mix Columns</li>
+<li>Add Round Key</li>
+</ul>
+</li>
+<li>Final round of –
+<ul>
+<li>Sub Bytes</li>
+<li>Shift Rows</li>
+<li>Add Round Key</li>
+</ul>
+</li>
+</ul>
+<h3 id="implementation">Implementation</h3>
+<p>This particular implementation was written to work with <a href="https://open.kattis.com/">Kattis</a> automated testing so it reads stdin as binary data and outputs the encrypted values to stdout in binary data. It probably won’t be a big change to switch this to standard Hex values for better readability but I haven’t gotten around to doing this since the class ended.</p>
+<h3 id="formatting-inputs">Formatting Inputs</h3>
+<p>The functions below help to convert the 16 byte strings into a list and eventually into a matrix. The transpose function is also needed later in the main encryption function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">space_input</span>(text):
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;&#34;&#34; Converts a string into 2 character hex list  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        state <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span> text:
+</span></span><span style="display:flex;"><span>            state<span style="color:#ff79c6">.</span>append(text[:<span style="color:#bd93f9">2</span>])
+</span></span><span style="display:flex;"><span>            text <span style="color:#ff79c6">=</span> text[<span style="color:#bd93f9">2</span>:]
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">bytes_2_matrix</span>(text):
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;&#34;&#34; Converts a 16-byte array into a 4x4 nested list matrix  &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        state <span style="color:#ff79c6">=</span> [<span style="color:#8be9fd;font-style:italic">list</span>(text[i:i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">4</span>]) <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(text), <span style="color:#bd93f9">4</span>)]
+</span></span><span style="display:flex;"><span>        state <span style="color:#ff79c6">=</span> transpose_matrix(state)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">transpose_matrix</span>(state):
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;&#34;&#34; bytes 2 matrix result needs to be transposed for correct order &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>        temp <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>            row <span style="color:#ff79c6">=</span> []
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                val <span style="color:#ff79c6">=</span> state[i][j]
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(val) <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">3</span>:
+</span></span><span style="display:flex;"><span>                    state[i][j] <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;0x0&#39;</span> <span style="color:#ff79c6">+</span> val[<span style="color:#bd93f9">2</span>]
+</span></span><span style="display:flex;"><span>                row<span style="color:#ff79c6">.</span>append(state[i][j])
+</span></span><span style="display:flex;"><span>            temp<span style="color:#ff79c6">.</span>append(row)    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> temp
+</span></span></code></pre></div><h3 id="initial-key-expansion">Initial Key Expansion</h3>
+<p>For key expansion, we take the 16 byte key that we have and expand it to 176 bytes. Each of these is then passed into each round of AES as a round key.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">rotate_bytes</span>(<span style="color:#8be9fd;font-style:italic">bytes</span>):
+</span></span><span style="display:flex;"><span>        temp <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">2</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">3</span>]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">bytes</span>[<span style="color:#bd93f9">3</span>] <span style="color:#ff79c6">=</span> temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">bytes</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">sbox_lookup</span>(<span style="color:#8be9fd;font-style:italic">bytes</span>):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>            srow <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">bytes</span>[i],<span style="color:#bd93f9">16</span>) <span style="color:#ff79c6">//</span> <span style="color:#bd93f9">16</span>
+</span></span><span style="display:flex;"><span>            scol <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">bytes</span>[i],<span style="color:#bd93f9">16</span>) <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">16</span>
+</span></span><span style="display:flex;"><span>            hex_sbox <span style="color:#ff79c6">=</span> SBOX[srow][scol]
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">bytes</span>[i] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(hex_sbox)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> <span style="color:#8be9fd;font-style:italic">bytes</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">expand_key</span>(master_key, expanded_key):
+</span></span><span style="display:flex;"><span>        rcon <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>        last_four_col <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS)]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">0</span>, <span style="color:#8be9fd;font-style:italic">len</span>(master_key), <span style="color:#bd93f9">1</span>):
+</span></span><span style="display:flex;"><span>            expanded_key[i] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(master_key[i]),<span style="color:#bd93f9">16</span>))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        done_with <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">16</span>  <span style="color:#6272a4"># counter for how many bytes we&#39;re done expanding</span>
+</span></span><span style="display:flex;"><span>        total_expanded_bytes <span style="color:#ff79c6">=</span> <span style="color:#bd93f9">176</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span> done_with <span style="color:#ff79c6">&lt;</span> total_expanded_bytes:
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                last_four_col[i] <span style="color:#ff79c6">=</span> expanded_key[i <span style="color:#ff79c6">+</span> done_with <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">4</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (done_with <span style="color:#ff79c6">%</span> <span style="color:#bd93f9">16</span> <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span>):
+</span></span><span style="display:flex;"><span>                last_four_col <span style="color:#ff79c6">=</span> rotate_bytes(last_four_col)
+</span></span><span style="display:flex;"><span>                last_four_col <span style="color:#ff79c6">=</span> sbox_lookup(last_four_col)
+</span></span><span style="display:flex;"><span>                last_four_col[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(<span style="color:#8be9fd;font-style:italic">int</span>(last_four_col[<span style="color:#bd93f9">0</span>],<span style="color:#bd93f9">16</span>) <span style="color:#ff79c6">^</span> RCON_TABLE[rcon])
+</span></span><span style="display:flex;"><span>                rcon <span style="color:#ff79c6">=</span> rcon <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                expanded_key[done_with] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(expanded_key[done_with <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">16</span>]),<span style="color:#bd93f9">16</span>) <span style="color:#ff79c6">^</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(last_four_col[i]),<span style="color:#bd93f9">16</span>))
+</span></span><span style="display:flex;"><span>                done_with <span style="color:#ff79c6">=</span> done_with <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> expanded_key
+</span></span></code></pre></div><h3 id="add-round-key">Add Round Key</h3>
+<p>Here we just xor the byte of the state with the byte of the key. State here refers to our 4×4 matrix that we are trying to encrypt.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">add_round_key</span>(state, key):
+</span></span><span style="display:flex;"><span>        key_matrix <span style="color:#ff79c6">=</span> bytes_2_matrix(key) <span style="color:#6272a4"># convert list into matrix for easier xor order</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> row <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> col <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                state[row][col] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(<span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(state[row][col]), <span style="color:#bd93f9">16</span>) <span style="color:#ff79c6">^</span> <span style="color:#8be9fd;font-style:italic">int</span>(<span style="color:#8be9fd;font-style:italic">str</span>(key_matrix[row][col]), <span style="color:#bd93f9">16</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span></code></pre></div><h3 id="sub-bytes">Sub Bytes</h3>
+<p>Replace each byte of the state with the corresponding in the lookup table (SBOX).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">sub_bytes</span>(state):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                val <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(state[i][j], <span style="color:#bd93f9">16</span>)
+</span></span><span style="display:flex;"><span>                state[i][j] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(SBOX[val<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][val<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span></code></pre></div><h3 id="shift-rows">Shift Rows</h3>
+<p>The first row is left as is. The second row is shifted left twice. The third row is shifted left thrice. The last row is shifted left three times.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">shift_rows</span>(state, row, num_shifts):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> _ <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(num_shifts):
+</span></span><span style="display:flex;"><span>            temp <span style="color:#ff79c6">=</span> state[row][<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">3</span>):
+</span></span><span style="display:flex;"><span>                state[row][j] <span style="color:#ff79c6">=</span> state[row][j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]
+</span></span><span style="display:flex;"><span>            state[row][<span style="color:#bd93f9">3</span>] <span style="color:#ff79c6">=</span> temp
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">shift_rows_wrapper</span>(state):
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>, <span style="color:#bd93f9">4</span>):
+</span></span><span style="display:flex;"><span>            state <span style="color:#ff79c6">=</span> shift_rows(state, i, i)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> state
+</span></span></code></pre></div><h3 id="mix-columns">Mix Columns</h3>
+<p>Taking the last column at a time and using matrix multiplication on it with an xor function. This is explained better in many other places, including <a href="https://www.angelfire.com/biz7/atleast/mix_columns.pdf">here</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">mix_columns</span>(state):
+</span></span><span style="display:flex;"><span>        mixed_state <span style="color:#ff79c6">=</span> [
+</span></span><span style="display:flex;"><span>            [<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>],
+</span></span><span style="display:flex;"><span>            [<span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>, <span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>        col_pick <span style="color:#ff79c6">=</span> [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS)]
+</span></span><span style="display:flex;"><span>        mix_col_val <span style="color:#ff79c6">=</span> [x <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS)]
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> col <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> row <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                col_pick[row] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">int</span>(state[row][col], <span style="color:#bd93f9">16</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            mix_col_val[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">=</span> MULTIPLY2[col_pick[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> MULTIPLY3[col_pick[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">3</span>]
+</span></span><span style="display:flex;"><span>            mix_col_val[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">=</span> col_pick[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">^</span> MULTIPLY2[col_pick[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">1</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> MULTIPLY3[col_pick[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">3</span>]
+</span></span><span style="display:flex;"><span>            mix_col_val[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">=</span> col_pick[<span style="color:#bd93f9">0</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">^</span> MULTIPLY2[col_pick[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">2</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> MULTIPLY3[col_pick[<span style="color:#bd93f9">3</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">3</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>]
+</span></span><span style="display:flex;"><span>            mix_col_val[<span style="color:#bd93f9">3</span>] <span style="color:#ff79c6">=</span> MULTIPLY3[col_pick[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">0</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">1</span>] <span style="color:#ff79c6">^</span> col_pick[<span style="color:#bd93f9">2</span>] <span style="color:#ff79c6">^</span> MULTIPLY2[col_pick[<span style="color:#bd93f9">3</span>]<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>][col_pick[<span style="color:#bd93f9">3</span>]<span style="color:#ff79c6">%</span><span style="color:#bd93f9">16</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">for</span> index <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(NUM_BLOCKS):
+</span></span><span style="display:flex;"><span>                mixed_state[index][col] <span style="color:#ff79c6">=</span> <span style="color:#8be9fd;font-style:italic">hex</span>(mix_col_val[index])
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> mixed_state
+</span></span></code></pre></div><h3 id="encryption">Encryption</h3>
+<p>The code above is all the functions we need. The functions just repeat over each round with new round keys from our key expansaion. We bring it all together in our main encryption function below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">def</span> <span style="color:#50fa7b">encrypt</span>(message, keyinput):
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        key <span style="color:#ff79c6">=</span> keyinput
+</span></span><span style="display:flex;"><span>        message <span style="color:#ff79c6">=</span> space_input(data)
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> bytes_2_matrix(message)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        EXPANDED_KEY <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">176</span>)]
+</span></span><span style="display:flex;"><span>        expanded_key <span style="color:#ff79c6">=</span> expand_key(key, EXPANDED_KEY)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        round_key <span style="color:#ff79c6">=</span> [<span style="color:#bd93f9">0</span> <span style="color:#ff79c6">for</span> x <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(expanded_key)<span style="color:#ff79c6">//</span><span style="color:#bd93f9">16</span>)]
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#8be9fd;font-style:italic">len</span>(round_key)):
+</span></span><span style="display:flex;"><span>            round_key[i] <span style="color:#ff79c6">=</span> expanded_key[i<span style="color:#ff79c6">*</span><span style="color:#bd93f9">16</span>:i<span style="color:#ff79c6">*</span><span style="color:#bd93f9">16</span><span style="color:#ff79c6">+</span><span style="color:#bd93f9">16</span>]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> add_round_key(state_matrix, round_key[<span style="color:#bd93f9">0</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">range</span>(<span style="color:#bd93f9">1</span>, NUM_ROUNDS):
+</span></span><span style="display:flex;"><span>            state_matrix <span style="color:#ff79c6">=</span> sub_bytes(state_matrix)
+</span></span><span style="display:flex;"><span>            state_matrix <span style="color:#ff79c6">=</span> shift_rows_wrapper(state_matrix)
+</span></span><span style="display:flex;"><span>            state_matrix <span style="color:#ff79c6">=</span> mix_columns(state_matrix)
+</span></span><span style="display:flex;"><span>            state_matrix <span style="color:#ff79c6">=</span> add_round_key(state_matrix, round_key[i])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> sub_bytes(state_matrix)
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> shift_rows_wrapper(state_matrix)
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> add_round_key(state_matrix, round_key[<span style="color:#bd93f9">10</span>])
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">#check the encryption string</span>
+</span></span><span style="display:flex;"><span>        state_matrix <span style="color:#ff79c6">=</span> transpose_matrix(state_matrix)
+</span></span><span style="display:flex;"><span>        cipher_list <span style="color:#ff79c6">=</span> [i <span style="color:#ff79c6">for</span> sub <span style="color:#ff79c6">in</span> state_matrix <span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">in</span> sub] <span style="color:#6272a4"># flatten nested list into 1D list</span>
+</span></span><span style="display:flex;"><span>        cipher <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#34;&#34;</span><span style="color:#ff79c6">.</span>join(cipher_list)<span style="color:#ff79c6">.</span>replace(<span style="color:#f1fa8c">&#39;0x&#39;</span>,<span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">return</span> cipher
+</span></span></code></pre></div><h3 id="main-function">Main Function</h3>
+<p>The main function where we obtain the stdin and send the stdout as well as break down the input by 16 bytes at a time for better performance.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> __name__ <span style="color:#ff79c6">==</span> <span style="color:#f1fa8c">&#39;__main__&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4">#For Kattis</span>
+</span></span><span style="display:flex;"><span>        key <span style="color:#ff79c6">=</span> sys<span style="color:#ff79c6">.</span>stdin<span style="color:#ff79c6">.</span>buffer<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">16</span>)<span style="color:#ff79c6">.</span>hex()
+</span></span><span style="display:flex;"><span>        key <span style="color:#ff79c6">=</span> space_input(key)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">while</span> <span style="color:#ff79c6">True</span>:
+</span></span><span style="display:flex;"><span>            data <span style="color:#ff79c6">=</span> sys<span style="color:#ff79c6">.</span>stdin<span style="color:#ff79c6">.</span>buffer<span style="color:#ff79c6">.</span>read(<span style="color:#bd93f9">16</span>)<span style="color:#ff79c6">.</span>hex()
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> <span style="color:#ff79c6">not</span> data:
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">break</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            ciphered <span style="color:#ff79c6">=</span> encrypt(data, key)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            sys<span style="color:#ff79c6">.</span>stdout<span style="color:#ff79c6">.</span>buffer<span style="color:#ff79c6">.</span>write(<span style="color:#8be9fd;font-style:italic">bytes</span><span style="color:#ff79c6">.</span>fromhex(ciphered))
+</span></span></code></pre></div><h3 id="summary">Summary</h3>
+<p>AES is not an easy concept to grasp. It took me a while to understand all the functions and how they relate together. Once I got the overall understanding from referencing many <a href="https://www.kavaliro.com/wp-content/uploads/2014/03/AES.pdf">resources</a> and external help the implementation became quite straightforward. This was quite a fun program to write afterwards. The whole code can be found on my Github link below. Due to limitations with Python and Kattis timeouts the program only passes 9/10 Kattis test cases as it runs into memory/timeout limits on Kattis for the last test. It would be fun to implement this in a more low-level programming language like Rust.</p>
+<p>Source code – <a href="https://github.com/aykhazanchi/tiny-aes">Tiny AES</a></p>
+<br>
+<hr>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/code/">code</a></span>
+
+
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/advanced-encryption-standard/">advanced-encryption-standard</a><a class="tag" href="/tags/aes/">aes</a><a class="tag" href="/tags/aes-ecb/">aes-ecb</a><a class="tag" href="/tags/applied-crypto/">applied-crypto</a><a class="tag" href="/tags/code/">code</a><a class="tag" href="/tags/cryptography/">cryptography</a><a class="tag" href="/tags/encryption/">encryption</a><a class="tag" href="/tags/kth/">kth</a><a class="tag" href="/tags/kth-royal-institute-of-technology/">kth-royal-institute-of-technology</a><a class="tag" href="/tags/python/">python</a><a class="tag" href="/tags/security/">security</a></span>
+
+
+
+
+      
+    </div>
+
+    
+  </div>
+
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ayushman Khazanchi
+        2022
+
+
+      
+    </li>
+    
+      <li class="footer__item">
+        <a
+          class="link"
+          href="/imprint/"
+          
+          title=""
+        >
+          imprint
+        </a>
+      </li>
+
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9c062c557275acbaba71f0c7cd4024da3e3cc825d248bc4b2130811b0965330b.js"
+    integrity="sha256-nAYsVXJ1rLq6cfDHzUAk2j48yCXSSLxLITCBGwllMws="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

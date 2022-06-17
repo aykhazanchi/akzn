@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>now on Ayushman Khazanchi</title>
+    <link>https://akzn.me/categories/now/</link>
+    <description>Recent content in now on Ayushman Khazanchi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Apr 2022 01:16:08 +0200</lastBuildDate><atom:link href="https://akzn.me/categories/now/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Now</title>
+      <link>https://akzn.me/now/</link>
+      <pubDate>Mon, 25 Apr 2022 01:16:08 +0200</pubDate>
+      
+      <guid>https://akzn.me/now/</guid>
+      
+        <description>&lt;p&gt;Last updated: 2022-04-25 01:16:08 &amp;#43;0200 CEST&lt;/p&gt;
+&lt;p&gt;I am currently:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Located in Stockholm, Sweden since August, 2021&lt;/li&gt;
+&lt;li&gt;Studying for a Master of Science in Software Engineering of Distributed Systems&lt;/li&gt;
+&lt;li&gt;Reading Three Men on a Boat by Jerome K. Jerome&lt;/li&gt;
+&lt;li&gt;Learning the MERN Stack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This page is inspired by Derek Sivers&amp;rsquo; &lt;a href=&#34;https://nownownow.com/about&#34;&gt;nownownow&lt;/a&gt; project.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

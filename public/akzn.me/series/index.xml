@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Series on Ayushman Khazanchi</title>
+    <link>https://akzn.me/series/</link>
+    <description>Recent content in Series on Ayushman Khazanchi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 31 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://akzn.me/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collections</title>
+      <link>https://akzn.me/series/collections/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/series/collections/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Exit Series</title>
+      <link>https://akzn.me/series/exit-series/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/series/exit-series/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

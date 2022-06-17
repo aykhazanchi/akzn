@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Ayushman Khazanchi</title>
+    <link>https://akzn.me/tags/automation/</link>
+    <description>Recent content in automation on Ayushman Khazanchi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://akzn.me/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hashicorp Vault Approle Auth</title>
+      <link>https://akzn.me/blog/hashicorp-vault-approle-auth/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/hashicorp-vault-approle-auth/</guid>
+      
+        <description>&lt;p&gt;Hashicorp &lt;a href=&#34;https://www.vaultproject.io/&#34;&gt;vault&lt;/a&gt; has various ways of authentication and since I&amp;rsquo;ve been playing around with some at work I decided to also put them here for reference. AppRole auth is one of the ways that Vault offers programmatic access to itself for machines/jobs/automation etc. Think Jenkins or Ansible trying to access credentials to run some deploy jobs without requiring someone to pass in the vault token manually. This page details both configuration of AppRole and authentication using vault/curl commands. For the most part the client use-cases tend to be through curl as you may not want to setup vault binaries on all your machines.&lt;/p&gt;
+&lt;p&gt;AppRole auth needs to be configured before it can be used for authentication. The steps below assume you have a working vault cluster setup. If not, use the in-memory dev mode for Vault.&lt;/p&gt;
+&lt;h3 id=&#34;configuring-approle-auth&#34;&gt;Configuring AppRole Auth&lt;/h3&gt;
+&lt;p&gt;Note: Configuration is usually done by the vault admin or sysadmin as part of initial setup for environment.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Create a vault auth approle method at path approle/ &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# This is the same as using `vault auth enable approle`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; -path&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;approle/ approle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# If you want to enable at a custom path (say myapproles/), pass it in the path flag&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; -path&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;myapproles/ approle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Verify role is created&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#Path           Type       Accessor                 Description&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#---- ---- -------- -----------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#myapproles/    approle    auth_approle_d60fcfe8    n/a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Create a role for your application (say, Jenkins)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault write auth/myapproles/role/jenkins-role &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;secret_id_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;10m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_num_uses&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;20m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_max_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;30m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;secret_id_num_uses&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;40&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Success! Data written to: auth/myapproles/role/jenkins-role&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Get the role id of the named role you just created&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;read&lt;/span&gt; auth/myapproles/role/jenkins-role/role-id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# role_id    3ca916cd-e9dd-f958-72ba-f68f874325b8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Generate a secret-id against the AppRole&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault write -f auth/myapproles/role/jenkins-role/secret-id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#secret_id             fccfd62f-361a-eb1b-ad09-00d83c8cef7c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#secret_id_accessor    060f906a-d972-1030-0165-dcf7f83a85f9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;authentication-via-approle&#34;&gt;Authentication via AppRole&lt;/h3&gt;
+&lt;p&gt;Authentication via the API (curl) hits the endpoint at &lt;code&gt;auth/&amp;lt;role-name&amp;gt;/login&lt;/code&gt;. This should point to the path where your role is created. The role to which you&amp;rsquo;re authenticating is identified by the &lt;code&gt;role_id&lt;/code&gt; passed in as credentials.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl --request POST --data &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;{&amp;#34;role_id&amp;#34;:&amp;#34;3ca916cd-e9dd-f958-72ba-f68f874325b8&amp;#34;, &amp;#34;secret_id&amp;#34;:&amp;#34;fccfd62f-361a-eb1b-ad09-00d83c8cef7c&amp;#34;}&amp;#39;&lt;/span&gt; &amp;lt;http://127.0.0.1:8200/v1/auth/myapproles/login&amp;gt; | jq .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;auth&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;client_token&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;s.Wz9B3wpeRr7umIElR45dRpSu&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;accessor&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;D15A2qsPDrZF2kie1DAxuMMF&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;policies&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;token_policies&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;metadata&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;role_name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;jenkins-role&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;lease_duration&amp;#34;&lt;/span&gt;: 1200,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;renewable&amp;#34;&lt;/span&gt;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;entity_id&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;8856c6b9-89de-393f-bdb3-aac36f05df3a&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;token_type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;service&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;orphan&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;client_token&lt;/code&gt; obtained above gives you access to Vault as that AppRole. This can be tested simply by running &lt;code&gt;vault login&lt;/code&gt; command and passing that token when prompted and checking the role assigned to you (&lt;code&gt;token_meta_role_name&lt;/code&gt;) when logged in.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault login
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Token &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;will be hidden&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Success! You are now authenticated. The token information displayed below
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;is already stored in the token helper. You &lt;span style=&#34;color:#ff79c6&#34;&gt;do&lt;/span&gt; NOT need to run &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;vault login&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;again. Future Vault requests will automatically use this token.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Key                     Value
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--- -----
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token                   s.Wz9B3wpeRr7umIElR45dRpSu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_accessor          D15A2qsPDrZF2kie1DAxuMMF
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_duration          16m35s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_renewable         &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_policies          &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;identity_policies       &lt;span style=&#34;color:#ff79c6&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;policies                &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_meta_role_name    jenkins-role
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We&amp;rsquo;re now successfully logged in as the &lt;code&gt;jenkins-role&lt;/code&gt; app role.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

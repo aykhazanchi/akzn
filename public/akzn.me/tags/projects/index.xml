@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>projects on Ayushman Khazanchi</title>
+    <link>https://akzn.me/tags/projects/</link>
+    <description>Recent content in projects on Ayushman Khazanchi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Apr 2022 01:16:08 +0200</lastBuildDate><atom:link href="https://akzn.me/tags/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code</title>
+      <link>https://akzn.me/code/</link>
+      <pubDate>Mon, 25 Apr 2022 01:16:08 +0200</pubDate>
+      
+      <guid>https://akzn.me/code/</guid>
+      
+        <description>&lt;p&gt;This is an unorganized list of some (non-work) code + fun stuff I&amp;rsquo;ve done in my free time.&lt;/p&gt;
+&lt;h2 id=&#34;tiny-aes&#34;&gt;Tiny AES&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Python)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A tiny implementation of AES ECB encryption in Python. &lt;a href=&#34;https://akzn.me/blog/tiny-aes-in-python&#34;&gt;Read more about it here.&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;distributed-intelligent-agents&#34;&gt;Distributed Intelligent Agents&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Gama Programming Language)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Various different GAMA prototypesbuilt around concepts of distributed agent communication, negotiation, auctions, and resolution based on the GAML simulation language. Picked up the basics of this language within a few days which is quite a feat in itself considering the absolute lack of good documentation around it.&lt;/p&gt;
+&lt;h2 id=&#34;eventy&#34;&gt;Eventy&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Python, Flask, SQLite)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;A rapid prototype app that I developed for the ID2207 - Modern Methods of Software Engineering course. The app was an event planner app that depicted certain user and data control flows based around a brief for a Swedish event planning company provided to us during the course. The prototype has functionality for ticket creation and having it pass through the various stages of approval/rejection by each concerned department until completion of the workflow.&lt;/p&gt;
+&lt;h2 id=&#34;distributed-systems&#34;&gt;Distributed Systems&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Erlang)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Some simple prototypes written in Erlang as part of our Distributed Systems course at KTH:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rudy: simple web server&lt;/li&gt;
+&lt;li&gt;Routy: small routing protocol&lt;/li&gt;
+&lt;li&gt;Loggy: logical time logger&lt;/li&gt;
+&lt;li&gt;Groupy: group membership service&lt;/li&gt;
+&lt;li&gt;Chordy: distributed hash table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;send-pups-bot&#34;&gt;Send Pups Bot&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Python, Flask, Twilio API)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I made a chatbot that sends you photos of cute pups on Whatsapp. It has a basic Flask backend and uses Twilio&amp;rsquo;s Whatsapp API. It uses the free Sandbox trial by Twilio and is deployed on Heroku so it may take some time to respond the first time as it wakes up. More about it here.&lt;/p&gt;
+&lt;h2 id=&#34;100citiesfrommemory&#34;&gt;#100CitiesFromMemory&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve long wanted to a do #100DaysProject. At the end of March 2020, I was convinced by a friend to start one. I started a writing project that imagined a city from memory as a response to a picture I had taken. I only got to 62 cities 😔 before it got a bit overwhelming during the Coronavirus-cum-lockdown-cum-pandemic situation. I will return to this soon, though. You can go through the project here.&lt;/p&gt;
+&lt;h2 id=&#34;philly-skyline-bot&#34;&gt;Philly Skyline Bot&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;(Python, Raspberry Pi)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Sometime back in 2017 I used a spare raspberry pi to take photos of the Philly Skyline from my then apartment window. The bot used to take a photo daily at 8 am and 8 pm with the raspberry pi camera module and then tweet the photos to the Twitter account. I think it was going for a month or two until I had to eventually change apartments. I made a timelapse of the skyline (with music and everything!) here and the now-defunct Twitter account is here.&lt;/p&gt;
+&lt;h2 id=&#34;coded-by-kids-philadelphia&#34;&gt;Coded By Kids, Philadelphia&lt;/h2&gt;
+&lt;p&gt;In Philly I used to volunteer with this super organization (until Aug 2017) that teaches kids how to code (but also general digital literacy) which I think is a super important skill to have going forward. Check out Coded By Kids.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>

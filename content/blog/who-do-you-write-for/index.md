@@ -1,0 +1,29 @@
+---
+title: Who Do You Write For
+date: 2014-11-09
+thumbnail: blog/who-do-you-write-for/images/
+images: ["blog/who-do-you-write-for/images/"]
+categories: ["general"]
+tags: ["censorship", "emotions", "essays", "freshly-pressed", "inspiration", "journals", "life", "on-writing", "questions", "reading", "thoughts", "writers", "writing", "writing-advice"]
+series: []
+DisableComments: true
+draft: true
+---
+
+The first ever, rather personal, piece I wrote was for myself. I wrote it as a closure, a way to deal with an experience that had rattled me to the bone some years ago. It was about someone very close to me, but it wasn't for him, or even addressed to him; it was for me, and he just happened to be the subject of it. The fist person I ever wrote a real, true-to-the-bone piece for was myself.
+
+It was not, however, my first experience with writing. I had written a few poems before, all remarkably bad now that I read them - and a countless number of essays ('thoughts,' at the time) and letters to friends and family, all written rather spontaneously and most destroyed with equal haste. But they weren't ever addressed to someone specific. Most weren't anyways. They were always to a group -- my parents, my cousins, a clique of friends, random people.
+
+Somewhere during freshman year, when I really started getting serious about writing and paying attention to what I was writing and how I could improve, I came across a rather popular advice given by established writers to confused, new writers: write for just one person. As it goes with general advice, it's just the right amount of vague, and so I had no idea who this one person was supposed to be for me. I began searching incessantly everywhere for my one person. In my memory, among my then friends, on the streets, in the cafés I frequented, even in libraries and dreary engineering halls hoping to find a reader on whom I could claim privilege. Did I already know this person? Would I meet him/her soon? Or worse, did I miss them already? Could it have been the girl at the café with whom I exchanged pleasantries? Maybe the old lady at the bus stop who asked for change, and then for directions? Was she inquiring in metaphors? Would I write with great ease when I met them? And, most importantly, did I need to trust them completely to be able to tell them my story?  
+
+For writing truthfully about yourself comes at a great cost. You lose friends, relations -- even pets -- to opinions and feelings, sometimes about deep, dark histories and sometimes to petty things. If you're lucky you strengthen some bonds, but luck is a shallow bucket in this profession. First, you lose the ones who steadfastly disagree with your opinions, or with your recounting of events to which they were also a party, or even to your descriptions of them or of people they love. This happens rather fast, and you need not feel either way about it. Next, you lose the ones who have been hurt deeply, close ties who might have been invested in your life on most accounts now upset by your views on them, or on things and events tangentially concerning them. It is often the hardest group to lose. But with time you'll get over this too, wondering all the while who it is you're really writing for, while not being able to put aside the compulsion of writing itself, continuing with pen to paper and the will to put it out in the open. The second group, though upset, will likely not end up completely deserting you, for the ties you've built have always been strong. Yet, there is a distance now, and since you have the unfortunate fate of being a writer you will feel the weight of this distance better than most others. Eventually, you'll end up writing about this as well.
+
+One of the first rebuttals I faced to my writings was intended as advice, and that too as an aside. It was rather stupid advice, a very mild form of censorship, but it completely threw me off, and almost ruined what little there is of my writing career. It still affects me to this day and I find myself unwilling, or unprepared, to write about some things. And yet, that single advice has significantly altered, and improved, how I approach writing now. The advice was mildly along the lines of censorship, to protect identities, and it was not intended as a means of censoring, just as a means of being politically correct. Most of us, however, don't realize the true gravity of our words, and how the smallest of things can make the biggest of impacts.  
+
+Still, I sometimes feel as though writing is an active rebellion to establish yourself in this world. It is not so much the desire to be heard, as the desire to just put your voice out there. Of course writers like being heard, it helps pay the bills, but writing, at its essence, is really a clarion call to engage those who are willing to be engaged in your view. It's a great provocation, an urgent nudge saying, "Come, listen to my story, look into my imagination, sit with me on this grey winter morning as we breath into a past. Come, see it from my side."
+
+Perhaps it is such that everything you write has a different 'one person' for it. Perhaps your essays about your desires and your thoughts are meant only to be shared with your loved ones. Perhaps your fiction is for your boyfriends, your poems for your self. Maybe it is so. We are, after all, a compartmentalized people. But some of the best writing I ever did existed only for the duration of a semester, was written only for one person, my professor. Some of that writing was personal, most of it was fiction. But it was easier to write knowing there was no one to offend, no one to look out for, no identities to change, no truths to bend. All stories were equal. And I realized that to achieve something like that was not only possible, it singularly boiled down to just one question: who do you write for?
+
+<br>
+
+---

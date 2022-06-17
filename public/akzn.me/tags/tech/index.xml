@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech on Ayushman Khazanchi</title>
+    <link>https://akzn.me/tags/tech/</link>
+    <description>Recent content in tech on Ayushman Khazanchi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 13 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://akzn.me/tags/tech/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Send Pups Chatbot with Twilio and Whatsapp</title>
+      <link>https://akzn.me/blog/send-pups-chatbot/</link>
+      <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/send-pups-chatbot/</guid>
+      
+        <description>&lt;p&gt;Sometime back I built a fun Whatsapp chatbot thing with which you could have some limited interaction. It&amp;rsquo;s not really a full-fledged chatbot to be clear. It&amp;rsquo;s basically a Flask API that sends you a Whatsapp photo of a cute pup along with a somewhat intellectual quote all using &lt;a href=&#34;https://www.twilio.com/&#34;&gt;Twilio&lt;/a&gt;&amp;rsquo;s Whatsapp API. I won&amp;rsquo;t go over setting up the &lt;a href=&#34;https://www.twilio.com/whatsapp&#34;&gt;Twilio Whatsapp Sandbox&lt;/a&gt;. There are plenty of guides for that around the web and it&amp;rsquo;s fairly basic.&lt;/p&gt;
+&lt;p&gt;The python code runs on &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt; as a backend API and is fairly simple. It has a &lt;code&gt;/pup&lt;/code&gt; endpoint where the requests come in and get parsed. The parsing is minimal — check if the user has requested what we have or deny it if the request is something we can&amp;rsquo;t fulfill (to make it &lt;em&gt;kind of&lt;/em&gt; act like a chatbot). You can see it in action at the end of the post or sign up yourself to try it.&lt;/p&gt;
+&lt;h4 id=&#34;setup&#34;&gt;Setup&lt;/h4&gt;
+&lt;p&gt;Start with installing the four main packages we&amp;rsquo;ll need&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir send-pups
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;cd&lt;/span&gt; send-pups
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 -m venv venv
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;venv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;venv&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt; $ pip install flask requests twilio gunicorn
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The requirements file for my python virtualenv contains a bunch of dependencies that get installed automatically. The &lt;code&gt;gunicorn&lt;/code&gt; installation is purely for deployment to Heroku.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;certifi&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;2019.11.28
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;chardet&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;3.0.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;click&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;7.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;Flask&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;gunicorn&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;20.0.4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;idna&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;2.9
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;itsdangerous&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.1.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;Jinja2&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;2.11.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;MarkupSafe&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;PyJWT&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.7.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;pytz&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;2019.3
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;requests&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;2.23.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;six&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.14.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;twilio&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;6.37.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;urllib3&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.25.8
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;Werkzeug&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt;1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;twilio-whatsapp-sandbox&#34;&gt;Twilio Whatsapp Sandbox&lt;/h4&gt;
+&lt;p&gt;The way this works is that Twilio corresponds with our Flask app using a webhook. In the Twilio console you can configure what you want your backend to be and for our purposes it points to my apps Heroku deployment endpoint (which ends in &lt;code&gt;/pup&lt;/code&gt; where the API is accessible). With the webhook configured in Twilio it now knows where to reach the send-pups app. Also in Twilio&amp;rsquo;s console in the Whatsapp Sandbox it gives you a specific number that you need to join. As a user/client you send a specific phrase to the Twilio number which connects your phone to Twilio. Since it&amp;rsquo;s a trial number it&amp;rsquo;s not open to everyone. Once your phone number is connected it can then send messages which end up in the Flask API through the webhook.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/image-1024x350.png&#34; alt=&#34;Twilio console with webhook configured&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;flask-api&#34;&gt;Flask API&lt;/h4&gt;
+&lt;p&gt;The Flask app is created in &lt;code&gt;send-pups/bot.py&lt;/code&gt; which does all the grunt work of parsing the request that comes in from the Twilio webhook, pulling the photo and quote together, and sending back the response to Twilio which then sends it to Whatsapp through its trial number.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; flask &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; Flask, request
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; requests
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;from&lt;/span&gt; twilio.twiml.messaging_response &lt;span style=&#34;color:#ff79c6&#34;&gt;import&lt;/span&gt; MessagingResponse
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;app &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; Flask(__name__)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;@app&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;route(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;/pup&amp;#39;&lt;/span&gt;, methods&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;])
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#50fa7b&#34;&gt;bot&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    incoming_msg &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; request&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;values&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;Body&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lower()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    resp &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; MessagingResponse()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    msg &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; resp&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;message()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    responded &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#6272a4&#34;&gt;# check to see if request contains the phrase &amp;#34;send pup&amp;#34; anywhere&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;send pup&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;in&lt;/span&gt; incoming_msg:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        r &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;lt;https://api.quotable.io/random&amp;gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;200&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;json()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            quote &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#f1fa8c&#34;&gt;f&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;n- &lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;{&lt;/span&gt;data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;author&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#f1fa8c&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;, as told to the pup&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;else&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            quote: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;I could not retrieve a quote at this time&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        msg&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;body(quote)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        r &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; requests&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;get(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;&amp;lt;https://api.thedogapi.com/v1/images/search&amp;gt;&amp;#39;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;status_code &lt;span style=&#34;color:#ff79c6&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#bd93f9&#34;&gt;200&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; r&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;json()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            data &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; data[&lt;span style=&#34;color:#bd93f9&#34;&gt;0&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            pup &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; data[&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        msg&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;media(pup)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        responded &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#6272a4&#34;&gt;# If no &amp;#39;send pups&amp;#39; request, respond that it can only send pups atm&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#ff79c6&#34;&gt;not&lt;/span&gt; responded:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        msg&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;body(&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;Sorry, I only know about intellectual pups. Please say &lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;\\&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;&lt;/span&gt;send pup\\&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34; if you&amp;#39;d like an intellectual pupper to appear&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;str&lt;/span&gt;(resp)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That&amp;rsquo;s pretty much it. I was hoping to make it a little more interactive eventually by adding more granularity to it. You could ask for certain breeds, for example, but it won&amp;rsquo;t really change the functionality of the app that much. What would be interesting is to be able to figure out a way to make the request two-phased where you could request for one thing, send a response, and then &lt;em&gt;based on the user response&lt;/em&gt; send back another response. But I haven&amp;rsquo;t really looked much into that with the somewhat limited functionality of the Whatsapp API so far.&lt;/p&gt;
+&lt;h4 id=&#34;deployment&#34;&gt;Deployment&lt;/h4&gt;
+&lt;p&gt;I have this deployed on Heroku on a dyno that goes to sleep when not in use so the first request might take some time if it&amp;rsquo;s not been done in a while. The Procfile for Heroku deployment is using a gunicorn server instead of the Flask development server. The guide to setup a heroku deployment is &lt;a href=&#34;https://devcenter.heroku.com/articles/getting-started-with-python?singlepage=true&#34;&gt;here&lt;/a&gt;. The app is deployed/updated with a simple &lt;code&gt;git push heroku master&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;web: gunicorn bot:app
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you want to play around with send-pups, follow the four-step method to happiness:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Add +14155238886 to whatsapp contacts. This is the Twilio Sandbox number I received.&lt;/li&gt;
+&lt;li&gt;Send &lt;code&gt;join instead-exclaimed&lt;/code&gt; through whatsapp to the above number to sign up to receive intellectual pups&lt;/li&gt;
+&lt;li&gt;Type &lt;code&gt;send pups&lt;/code&gt; to start receiving intellectual pups&lt;/li&gt;
+&lt;li&gt;Achieve happiness&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note: The trial account has a limited free balance that you can use to send and receive messages as part of testing your app. I&amp;rsquo;ll keep this going only as long as that balance is available. For production use you need to get your business case approved through Twilio as the Whatsapp API is not open to all just yet.&lt;/p&gt;
+&lt;p&gt;See it in action -&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Hashicorp Vault Approle Auth</title>
+      <link>https://akzn.me/blog/hashicorp-vault-approle-auth/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/hashicorp-vault-approle-auth/</guid>
+      
+        <description>&lt;p&gt;Hashicorp &lt;a href=&#34;https://www.vaultproject.io/&#34;&gt;vault&lt;/a&gt; has various ways of authentication and since I&amp;rsquo;ve been playing around with some at work I decided to also put them here for reference. AppRole auth is one of the ways that Vault offers programmatic access to itself for machines/jobs/automation etc. Think Jenkins or Ansible trying to access credentials to run some deploy jobs without requiring someone to pass in the vault token manually. This page details both configuration of AppRole and authentication using vault/curl commands. For the most part the client use-cases tend to be through curl as you may not want to setup vault binaries on all your machines.&lt;/p&gt;
+&lt;p&gt;AppRole auth needs to be configured before it can be used for authentication. The steps below assume you have a working vault cluster setup. If not, use the in-memory dev mode for Vault.&lt;/p&gt;
+&lt;h3 id=&#34;configuring-approle-auth&#34;&gt;Configuring AppRole Auth&lt;/h3&gt;
+&lt;p&gt;Note: Configuration is usually done by the vault admin or sysadmin as part of initial setup for environment.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Create a vault auth approle method at path approle/ &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# This is the same as using `vault auth enable approle`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; -path&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;approle/ approle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# If you want to enable at a custom path (say myapproles/), pass it in the path flag&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;enable&lt;/span&gt; -path&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;myapproles/ approle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Verify role is created&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault auth list
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#Path           Type       Accessor                 Description&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#---- ---- -------- -----------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#myapproles/    approle    auth_approle_d60fcfe8    n/a&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Create a role for your application (say, Jenkins)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault write auth/myapproles/role/jenkins-role &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;secret_id_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;10m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_num_uses&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;20m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;token_max_ttl&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;30m &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;secret_id_num_uses&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#bd93f9&#34;&gt;40&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Success! Data written to: auth/myapproles/role/jenkins-role&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Get the role id of the named role you just created&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;read&lt;/span&gt; auth/myapproles/role/jenkins-role/role-id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# role_id    3ca916cd-e9dd-f958-72ba-f68f874325b8&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;# Generate a secret-id against the AppRole&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault write -f auth/myapproles/role/jenkins-role/secret-id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#secret_id             fccfd62f-361a-eb1b-ad09-00d83c8cef7c&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#6272a4&#34;&gt;#secret_id_accessor    060f906a-d972-1030-0165-dcf7f83a85f9&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;authentication-via-approle&#34;&gt;Authentication via AppRole&lt;/h3&gt;
+&lt;p&gt;Authentication via the API (curl) hits the endpoint at &lt;code&gt;auth/&amp;lt;role-name&amp;gt;/login&lt;/code&gt;. This should point to the path where your role is created. The role to which you&amp;rsquo;re authenticating is identified by the &lt;code&gt;role_id&lt;/code&gt; passed in as credentials.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;curl --request POST --data &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#39;{&amp;#34;role_id&amp;#34;:&amp;#34;3ca916cd-e9dd-f958-72ba-f68f874325b8&amp;#34;, &amp;#34;secret_id&amp;#34;:&amp;#34;fccfd62f-361a-eb1b-ad09-00d83c8cef7c&amp;#34;}&amp;#39;&lt;/span&gt; &amp;lt;http://127.0.0.1:8200/v1/auth/myapproles/login&amp;gt; | jq .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;auth&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;client_token&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;s.Wz9B3wpeRr7umIElR45dRpSu&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;accessor&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;D15A2qsPDrZF2kie1DAxuMMF&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;policies&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;token_policies&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;metadata&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#ff79c6&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;role_name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;jenkins-role&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;lease_duration&amp;#34;&lt;/span&gt;: 1200,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;renewable&amp;#34;&lt;/span&gt;: true,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;entity_id&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;8856c6b9-89de-393f-bdb3-aac36f05df3a&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;token_type&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;service&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;orphan&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;client_token&lt;/code&gt; obtained above gives you access to Vault as that AppRole. This can be tested simply by running &lt;code&gt;vault login&lt;/code&gt; command and passing that token when prompted and checking the role assigned to you (&lt;code&gt;token_meta_role_name&lt;/code&gt;) when logged in.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vault login
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Token &lt;span style=&#34;color:#ff79c6&#34;&gt;(&lt;/span&gt;will be hidden&lt;span style=&#34;color:#ff79c6&#34;&gt;)&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Success! You are now authenticated. The token information displayed below
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;is already stored in the token helper. You &lt;span style=&#34;color:#ff79c6&#34;&gt;do&lt;/span&gt; NOT need to run &lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;vault login&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;again. Future Vault requests will automatically use this token.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Key                     Value
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--- -----
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token                   s.Wz9B3wpeRr7umIElR45dRpSu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_accessor          D15A2qsPDrZF2kie1DAxuMMF
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_duration          16m35s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_renewable         &lt;span style=&#34;color:#8be9fd;font-style:italic&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_policies          &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;identity_policies       &lt;span style=&#34;color:#ff79c6&#34;&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;policies                &lt;span style=&#34;color:#ff79c6&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#f1fa8c&#34;&gt;&amp;#34;default&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ff79c6&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;token_meta_role_name    jenkins-role
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We&amp;rsquo;re now successfully logged in as the &lt;code&gt;jenkins-role&lt;/code&gt; app role.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Reading - May 2018</title>
+      <link>https://akzn.me/blog/reading-may-2018/</link>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/reading-may-2018/</guid>
+      
+        <description>&lt;p&gt;Collections is an attempt at keeping a monthly record of the pieces of writing/art/media that I’ve found valuable and interesting. More about the series &lt;a href=&#34;https://akzn.me/blog/category/collections/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://stratechery.com/2018/the-bill-gates-line/&#34;&gt;// The Bill Gates Line&lt;/a&gt; (Tech)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Windows was indeed the ultimate platform — the company used to brag about only capturing a minority of the total value of the Windows ecosystem — and the operating system’s clear successors are Amazon Web Services and Microsoft’s own Azure Cloud Services. In all three cases there are strong and durable businesses to be built on top.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;On the difference between platforms and aggregators.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.recode.net/2018/5/30/17385116/mary-meeker-slides-internet-trends-code-conference-2018&#34;&gt;// Mary Meeker&amp;rsquo;s 2018 Internet Trends Report&lt;/a&gt; (World / Tech)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;High growth in mobile usage, easier payments, China&amp;rsquo;s inevitable tech dominance &amp;ndash; this is always a fun and insightful slide deck (attached at the end of the article).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://mobile.nytimes.com/2018/05/24/magazine/what-does-it-mean-to-look-at-this.html&#34;&gt;// What Does It Mean to Look at This?&lt;/a&gt; (Art)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Photographs of atrocity always confront us with questions of inequality. But these questions can no longer simply be reduced to &amp;lsquo;Why them and why not us?&amp;rsquo; If, as Azoulay argues, photography deterritorializes citizenship, then these images accuse, they interrogate and they put us in the same boat with those we are looking at. &amp;lsquo;What have we done,&amp;rsquo; they ask us, &amp;rsquo;to create the conditions in which others, our fellow citizens, undergo these unspeakable experiences?&amp;rsquo;&amp;rdquo;&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Reading - April 2018</title>
+      <link>https://akzn.me/blog/reading-april-2018/</link>
+      <pubDate>Mon, 30 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/reading-april-2018/</guid>
+      
+        <description>&lt;p&gt;&lt;em&gt;Collections&lt;/em&gt; is an attempt at keeping a monthly record of the pieces of writing/art/media that I&amp;rsquo;ve found valuable and interesting. More about the series &lt;a href=&#34;https://akzn.me/blog/category/collections/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bloomberg.com/features/2018-quest-for-billion-dollar-red/&#34;&gt;// The Quest for the Next Billion Dollar Color&lt;/a&gt; &lt;em&gt;(World)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;YInMn blue (pronounced YIN-min) is an amalgam of yttrium, indium oxide, and manganese—elements deep within the periodic table that together form something unique. YInMn was the first blue pigment discovered in more than 200 years&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The world lacks a great all-around red. Always has. We’ve made do with alternatives that could be toxic or plain gross. The gladiators smeared their faces with mercury-based vermilion. Titian painted with an arsenic-based mineral called realgar. The British army’s red coats were infused with crushed cochineal beetles. For decades, red Lego bricks contained cadmium, a carcinogen.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Really unexpected and interesting read.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ncase.me/trust//&#34;&gt;// The Evolution of Trust&lt;/a&gt; &lt;em&gt;(Art / Tech)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ncase.me/&#34;&gt;Nicky Case&lt;/a&gt; makes some of my favorite interactive pieces on the web. The Evolution of Trust is an interactive game that explores various &amp;ldquo;approaches&amp;rdquo; to trust and cooperation. Beautifully explained, it ended up leaving me with more questions than answers.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.thehindu.com/books/i-recognise-the-holiness-of-death-an-interview-with-amy-tan/article23398989.ece&#34;&gt;// I Recognise the Holiness of Death, an Interview with Amy Tan&lt;/a&gt; &lt;em&gt;(Social)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;There’s the first breath, there’s the last breath, and everything that goes between. What we put in there as people and what we’ve left, what we’ve given. Not these pages in a library. This legacy. I think it’s false to count your symbolic immortality on published books. It has more to do with what you give to the world that lasts forever…&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;This small interview has a lot of wisdom.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.newyorker.com/magazine/2018/04/16/the-silence-the-legacy-of-childhood-trauma&#34;&gt;// The Silence: The Legacy of Childhood Trauma&lt;/a&gt; &lt;em&gt;(Social)&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;Not enough pages in the world to describe what it did to me. The whole planet could be my inkstand and it still wouldn’t be enough. That shit cracked the planet of me in half, threw me completely out of orbit, into the lightless regions of space where life is not possible.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Junot Diaz is in my top 3 favorite writers and the powerful force and beauty of his writing is visible in this unfortunate personal story.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>Some Thoughts on Using the iPhone</title>
+      <link>https://akzn.me/blog/some-thoughts-on-using-the-iphone/</link>
+      <pubDate>Sat, 05 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://akzn.me/blog/some-thoughts-on-using-the-iphone/</guid>
+      
+        <description>&lt;p&gt;I&amp;rsquo;ve been using the iPhone 6S for about six months now. I made the switch from a Google Nexus 5 which was, in my opinion, the best Android phone to have come out in its time. With Google better defining and standardizing their material design philosophy it&amp;rsquo;s a great time to switch over to Android. Over the last few months I&amp;rsquo;ve grown to like the iPhone but I find something still amiss.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m going to try and jot down a few thoughts on where, having switched from Android to iPhone, I found myself frustrated by the Apple experience.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Home Screen / App Menu&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The first and foremost is the Home Screen. I&amp;rsquo;ve long favored the separation of the home screen from the app menu in Android. This way, in Android, you can add a bunch of favorite apps to the home screen if you want but also have the option of keeping it entirely app-free. Apple doesn&amp;rsquo;t allow an empty home screen and all my apps are present there whether I want them or not. Sometimes this feels like too much noise as soon as you unlock the phone. If I want to keep just my favorites on the main screen, I have to move all the other apps to the second screen (to the right). This is the way I have it right now but if you don&amp;rsquo;t organize well eventually you&amp;rsquo;ll end up having three home screens.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Folders&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Because Android has a separate App Screen there isn&amp;rsquo;t a &lt;em&gt;pressing&lt;/em&gt; need to create folders on the home screen. I don&amp;rsquo;t like folders at all but one can still do it in Android. The apps on my iPhone&amp;rsquo;s second screen are in folders only because those are junk apps Apple pre-loaded on to the phone and some I use as rarely as once a month. Also because with Apple if you want to create any kind of semblance in your life and maintain your apps only on two screens, you&amp;rsquo;ll inevitably have to create folders. The issue arises when you&amp;rsquo;re switching from one app in a folder to another app in a different folder, which if you&amp;rsquo;re not used to using the home button every time, gets really really awkward. Assuming you start inside the folder, the other app is still three clicks away - one to go back to the home screen, one to open the second folder, one to click on the app. (Four if your app is on the second screen (swipe) inside the folder.)&lt;/p&gt;
+&lt;p&gt;The use case for this on Android is simpler. Let&amp;rsquo;s say you start in a folder. One click to home screen, one click to open the menu, scroll to the app, and one click to get in. There is also the hard/soft back button and all apps are in the same hierarchy once you&amp;rsquo;re in the menu. This was not the case in Lollipop, I think, where the menu went from left to right and you had to swipe each time for a new page. Naturally, people complained and it was reverted.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;UI Flow&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I deeply miss the back button. Nothing will ever convince me that placing a soft button all the way to the top-left of the screen is a better idea than providing a hard/soft back button on the bottom left. The swipe gesture from the left edge of the screen is awkward as hell when you&amp;rsquo;re too far into the rabbithole and have to go back six pages.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Notifications&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve had some apps (especially the default messaging app) on the iPhone show a notification on the lock screen but once you unlock the phone (not swiping on the app) the notifications disappear and don&amp;rsquo;t show up in the panel. They only show up as the numbers over the icon at that point. Not sure why only some apps do this.&lt;/p&gt;
+&lt;p&gt;In iOS, if a notification shows up in the panel but I check the notification by directly going to the app and not tapping on the notification itself the ideal workflow should involve the notification in the panel also disappearing. However, the iPhone continues showing the notification in the panel for something that I&amp;rsquo;ve already checked in the app.&lt;/p&gt;
+&lt;p&gt;In Android if you bypass the notification panel and directly open the app containing the notification the notification in the panel also disappears.&lt;/p&gt;
+&lt;p&gt;My work email account (Exchange) does not ever show notifications either on the lock screen or notifications panel. There is only the notification sound and the vibration and the icon count. No actual notification information. If by chance I get the notification when my phone is unlocked then it shows up as a banner notification for a few seconds but never when it&amp;rsquo;s locked.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Battery&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The battery has been great on the iPhone. Granted I&amp;rsquo;ve only had it for about six months so it&amp;rsquo;s fairly new but it&amp;rsquo;s been beating my Android by a few hours at least. However, on the flipside, it&amp;rsquo;s also turned off on me at 15 % - 17 % multiple times when I&amp;rsquo;ve refused to turn on Low Power Mode. When it did turn off, it acted as if it was completely drained and wouldn&amp;rsquo;t turn on at all.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;CalDav / Corporate Integration&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;This is one of the big reasons why I decided to switch to the iPhone for a while. The corporate sync is seamless in most cases. My work email syncs (despite the notifications), my calendar syncs and allows me to accept/decline meeting invites, and I can watch WebEx presentations from my phone as well (though I don&amp;rsquo;t usually use this). The calendar sync itself is a big plus for me as I can&amp;rsquo;t live without a calendar (I&amp;rsquo;d forget everything). Android dropped CalDav support for some reason and so I&amp;rsquo;ve never been able to get my work calendar on to Android.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Exterior&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The metal body of the iPhone is vastly superior to the plastic of the Nexus phones. This is something that has definitely impressed me. The exterior design of the iPhone is amazing, and you can tell the quality apart. In fact, if I switch back to Android finding a phone with a metal body will be pretty high on the list.&lt;/p&gt;
+&lt;br&gt;
+&lt;hr&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
