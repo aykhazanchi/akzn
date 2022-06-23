@@ -12,8 +12,8 @@ I am currently:
 
 - Located in Stockholm, Sweden since August, 2021
 - Studying for a Master of Science in Software Engineering of Distributed Systems
-- Reading Three Men on a Boat by Jerome K. Jerome
-- Learning the MERN Stack
+- Working with IBM Bluesmarts
+- Enjoying the summer
 
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 
