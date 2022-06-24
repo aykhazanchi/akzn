@@ -4,7 +4,7 @@ date: 2021-03-10T22:06:51+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/lappis-meals/kashmiri-shivratri-saal/images/kashmiri-shivratri-saal.jpg" alt="kashmiri-shivratri-saal" width="50%" height="50%" >}}

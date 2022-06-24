@@ -4,7 +4,7 @@ date: 2021-12-25T13:31:57+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/lappis-meals/christmas-day-brunch/images/christmas-day-brunch.jpg" alt="christmas-day-brunch" width="50%" height="50%" >}}

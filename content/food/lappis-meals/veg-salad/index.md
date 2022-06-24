@@ -4,7 +4,7 @@ date: 2021-11-10T14:07:31+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/lappis-meals/veg-salad/images/veg-salad.jpg" alt="veg-salad" width="50%" height="50%" >}}

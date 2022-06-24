@@ -4,7 +4,7 @@ date: 2021-12-23T20:39:27+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/lappis-meals/korean-fried-chicken-burgers/images/korean-fried-chicken-burgers.jpg" alt="korean-fried-chicken-burgers" width="50%" height="50%" >}}

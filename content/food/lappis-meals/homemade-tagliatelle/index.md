@@ -4,7 +4,7 @@ date: 2020-05-02T21:26:55+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/lappis-meals/homemade-tagliatelle/images/homemade-tagliatelle.jpg" alt="homemade-tagliatelle" width="50%" height="50%" >}}
