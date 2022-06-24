@@ -47,9 +47,9 @@ enableRobotsTXT = true
     doNotLoadAnimations = false
 
     # Date settings
-    singleDateFormat = "2/1/2006"
-    indexDateFormat = "2/1/2006"
-    listDateFormat = "2/1/2006"
+    singleDateFormat = "Jan 2, 2006"
+    indexDateFormat = "Jan 2, 2006"
+    listDateFormat = "Jan 2, 2006"
 
     # Google Fonts
     googleFonts = ["PT+Serif", "PT+Sans+Narrow:wght@400;700", "Fira+Mono"]
