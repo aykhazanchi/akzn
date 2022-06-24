@@ -1,9 +1,6 @@
 rm -rf ./public/akzn.me/*
-
 mkdir -p ./public/akzn.me
-
-hugo
-
+hugo -D
 mv ./public/* ./public/akzn.me/
-
-scp -r ./public/akzn.me akzn:~/
+rsync -av ./public/akzn.me akzn:~/
+#scp -r ./public/akzn.me akzn.me:~/
