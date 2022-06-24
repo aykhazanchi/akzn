@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-M{< figure src="/food/lappis-meals/breakfast-muesli/images/breakfast-muesli.jpg" alt="breakfast-muesli" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/breakfast-muesli/images/breakfast-muesli.jpg" alt="breakfast-muesli" width="50%" height="50%" >}}
 
 <br>
 

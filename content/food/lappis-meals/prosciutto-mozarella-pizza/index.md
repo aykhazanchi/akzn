@@ -7,7 +7,9 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/lappis-meals/prosciutto-mozarella-pizza/images/prosciutto-mozarella-pizza.png" alt="prosciutto-mozarella-pizza" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/prosciutto-mozarella-pizza/images/prosciutto-mozarella-pizza.jpg" alt="prosciutto-mozarella-pizza" width="50%" height="50%" >}}
+
+{{< figure src="/food/lappis-meals/prosciutto-mozarella-pizza/images/prosciutto-mozarella-pizza-2.jpg" alt="prosciutto-mozarella-pizza" width="50%" height="50%" >}}
 
 <br>
 

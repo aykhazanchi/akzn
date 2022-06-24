@@ -11,4 +11,6 @@ draft: false
 
 <br>
 
+Swedish crispy bread (Knäckebröd), sunny side eggs, salami milano, grana padano. Salt and (five) pepper, of course.
+
 ---

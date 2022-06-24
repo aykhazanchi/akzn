@@ -8,3 +8,7 @@ draft: false
 ---
 
 {{< figure src="/food/lappis-meals/chorizo-tacos/images/chorizo-tacos.png" alt="chorizo-tacos" width="50%" height="50%" >}}
+
+Chorizo, chile con carne, salt, pepper, stock, cheese.
+
+---

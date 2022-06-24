@@ -6,7 +6,7 @@ draft: false
 
 <a href="/about/">
 <figure style="display: inline-block; margin: 4px;" >
-<img alt="about" src="/images/me.png" width="350" height="350">
+<img alt="about" src="/images/me-kayak.jpg" width="350" height="350">
 <figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">ABOUT</figcaption>
 </figure>
 </a>
