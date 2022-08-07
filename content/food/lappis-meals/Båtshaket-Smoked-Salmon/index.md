@@ -7,7 +7,7 @@ DisableComments: true
 draft: true
 ---
 
-{{< figure src="/food/lappis-meals/Båtshaket-Smoked-Salmon/images/smoked-salmon.jpg" alt="Båtshaket-Smoked-Salmon" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/båtshaket-smoked-salmon/images/smoked-salmon.jpeg" alt="Båtshaket-Smoked-Salmon" width="50%" height="50%" >}}
 
 <br>
 

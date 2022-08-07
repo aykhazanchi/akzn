@@ -7,10 +7,10 @@ DisableComments: true
 draft: true
 ---
 
-{{< figure src="/food/lappis-meals/Ethiopian-Beyeaynetu/images/ethiopian-beyeaynetu.jpg" alt="Ethiopian-Beyeaynetu" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/ethiopian-beyeaynetu/images/ethiopian-beyeaynetu.jpeg" alt="Ethiopian-Beyeaynetu" width="50%" height="50%" >}}
 
 <br>
 
-Had with Drew at Gojo Ethiopian Restaurant in Hornstull.
+Had with Drew at Gojo Ethiopian Restaurant in Hornstull. Along with a bottle of Mestej.
 
 ---
