@@ -7,7 +7,7 @@ DisableComments: true
 draft: true
 ---
 
-{{< figure src="/food/lappis-meals/{{ .Name }}/images/{{ .Name }}.jpg" alt="{{ .Name }}" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/{{ .Name }}/images/{{ .Name }}.jpeg" alt="{{ .Name }}" width="50%" height="50%" >}}
 
 <br>
 
