@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-[![Image of book](http://akzn.me/blog/wp-content/uploads/2015/05/family_life.jpg?w=200)](http://akzn.me/blog/wp-content/uploads/2015/05/family_life.jpg)
+[![Image of book](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415582645i/22253764.jpg)](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415582645i/22253764.jpg)
 
 How do you even begin to write about a book that is so painfully honest that it can be tender and heartbreaking in the same sentence. In its most mundane parts. This is the story of Ajay growing up envying his older brother, Birju, in every sense of the word. Once when visiting their grandparents Birju is the one to inform them that their father has sent tickets for the family to emigrate to America. Immediately Ajay is in a state of resentment for not having been the 'bearer' of this good news. Everything Birju does seems flawless and infinitely wise to Ajay. But an event that renders Birju entirely disabled changes their lives forever. It's comforting to put the book in that box - to call it a story of loss and dealing with that loss, but it turns out to be so much more.
 

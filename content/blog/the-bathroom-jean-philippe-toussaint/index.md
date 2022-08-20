@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-[![Image of the book cover](http://akzn.me/blog/wp-content/uploads/2015/05/the_bathroom.jpg?w=194)](http://akzn.me/blog/wp-content/uploads/2015/05/the_bathroom.jpg)
+[![Image of the book cover](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348309463i/4344454.jpg)](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348309463i/4344454.jpg)
 
 I have just finished a rather perplexing book. Perplexing in the way that only French things can seem perplexing to those not well versed with the deeper intricacies of the French culture.
 
