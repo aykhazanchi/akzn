@@ -1,8 +1,19 @@
 rm -rf ./public/akzn.me/*
-mkdir -p ./public/akzn.me
+mkdir -p ./public/
 hugo -D
-mv ./public/* ./public/akzn.me/
+echo "----------------------------------------------------------"
+echo "Running a draft deployment"
+echo "----------------------------------------------------------"
 netlify deploy
-#netlify deploy --prod
+echo "----------------------------------------------------------"
+read -p "Do you want to proceed with production deploy? (y/n) " yn
+
+case $yn in 
+	[yY] ) netlify deploy --prod;
+        break;;
+	[nN] ) echo exiting...;
+		exit;;
+	* ) echo invalid response;
+esac
 #rsync -av ./public/akzn.me akzn:~/
 #scp -r ./public/akzn.me akzn.me:~/
