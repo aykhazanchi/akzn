@@ -7,7 +7,7 @@ DisableComments: true
 draft: true
 ---
 
-{{< figure src="/food/lappis-meals/totemo-ramen/images/totemo-ramen.png" alt="totemo-ramen" width="50%" height="50%" >}}
+{{< figure src="/food/stockholm/totemo-ramen/images/totemo-ramen.png" alt="totemo-ramen" width="50%" height="50%" >}}
 
 <br>
 

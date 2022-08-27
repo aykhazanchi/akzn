@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/lappis-meals/lithuanian-dumplings/images/lithuanian-dumplings.jpg" alt="lithuanian-dumplings" width="50%" height="50%" >}}
+{{< figure src="/food/vilnius/lithuanian-dumplings/images/lithuanian-dumplings.jpg" alt="lithuanian-dumplings" width="50%" height="50%" >}}
 
 <br>
 

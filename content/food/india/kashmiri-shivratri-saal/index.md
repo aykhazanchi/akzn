@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/lappis-meals/kashmiri-shivratri-saal/images/kashmiri-shivratri-saal.jpg" alt="kashmiri-shivratri-saal" width="50%" height="50%" >}}
+{{< figure src="/food/india/kashmiri-shivratri-saal/images/kashmiri-shivratri-saal.jpg" alt="kashmiri-shivratri-saal" width="50%" height="50%" >}}
 
 <br>
 
