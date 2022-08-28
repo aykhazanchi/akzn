@@ -24,7 +24,7 @@ When we learn a language we memorize things and only later learn how everything 
 
 So it seems to me that the problem with a lot of these tutorials is that they teach the rules of the language before telling people what the words are, what they can do, and how they can be used right _now_. This is all more important to a beginner than the in-depth stuff. When we learned the French words for hello, good morning, how are you, and good bye we were able to use them immediately. We walked in the next day and everyone said Bonjour instead of Hello. If we'd learned the words for cat and dog in the first class, we would have remembered them, sure, but we wouldn't know what to do with that knowledge. You just need more context to use cat/dog in a sentence. And so, on the first day, it just wasn't directly relevant. Hello was relevant. It could be used immediately. It didn't require knowing anything else.
 
-\[caption id="" align="aligncenter" width="500"\]![](images/171.jpg) Every new programmer goes through this phase.\[/caption\]
+![](images/171.jpg) Every new programmer goes through this phase.
 
  
 

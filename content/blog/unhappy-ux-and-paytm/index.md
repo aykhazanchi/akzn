@@ -1,8 +1,8 @@
 ---
 title: Unhappy UX and Paytm
 date: 2018-03-16
-thumbnail: blog/unhappy-ux-and-paytm/images/
-images: ["blog/unhappy-ux-and-paytm/images/"]
+thumbnail: blog/unhappy-ux-and-paytm/images/online-wallets-in-india.jpg
+images: ["blog/unhappy-ux-and-paytm/images/online-wallets-in-india.jpg"]
 categories: ["general"]
 tags: ["design", "digital-india", "digital-payments", "fintech", "india", "messy-ux", "mobile-design", "paytm", "technology", "ui-ux", "unhappy-ux", "upi"]
 series: []
@@ -22,7 +22,7 @@ I came back to it some days later and after a few more attempts finally learned 
 
 Twice now I’ve lost money reloading Paytm through the Uber integration. Reloading PayTM wallet through Uber isn’t stable. This isn’t a network issue — something that is genuinely an issue in India. To book an Uber using Paytm you need a minimum balance in your wallet of Rs 325. When it’s below that Uber offers an integration to help you reload your balance. While doing this the transaction failed for me in the processing stage. This led to the money getting debited from my bank account but not showing up in the Paytm wallet. To Paytm’s credit, they are quick to confirm failed transactions and immediately informed me via text. Once they were able to confirm that the amount had been debited from my account they sent me a confirmation message. However, even though the transaction was confirmed by Paytm, the balance credited in the wallet didn’t reflect the correct amount.
 
-\[caption id="attachment\_1794" align="aligncenter" width="345"\]![Image showing a text message with Paytm balance short of Rs. 350](images/IMG_20180315_233135_767-544x1024.jpg) Paytm balance short of Rs. 350\[/caption\]
+![Image showing a text message with Paytm balance short of Rs. 350](images/IMG_20180315_233135_767-544x1024.jpg)
 
 To raise this issue I ran into another conundrum. What category does this issue fit in? It’s not in any of the following: _Managing my Paytm account_, _Recharge and Bill Payments_,  _Fund Transfer Issues_. Most surprisingly, it's not even under _Adding money to wallet_ which is exactly what it's doing (reloading money in your wallet). I found the transaction listed under _Payments using Wallet_ where there is a separate tab for “Added”. This list seems to be entirely different from the list of transactions located under the _Adding money to wallet_ option listed above even though from an end-user perspective both are doing the same thing. It doesn’t make sense why half of my transactions for adding money to the Paytm wallet would be in different sections varying on how the money was added (through Paytm vs third-party integration).
 

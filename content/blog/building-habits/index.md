@@ -20,7 +20,7 @@ This brings me to a model I've been thinking a lot about, particularly because I
 
  
 
-\[caption id="" align="aligncenter" width="218"\]![](/blog/building-habits/images/Habitloop.png) The Habit Loop\[/caption\]
+![The Habit Loop](/blog/building-habits/images/Habitloop.png)
 
  
 Simply put, in order to change habits -

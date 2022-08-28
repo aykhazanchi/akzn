@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-\[caption id="attachment\_1013" align="aligncenter" width="1200"\][![The Principles of Uncertainty, by Maira Kalman](images/2014-11-02-00-06-321.jpg)](http://akzn.me/blog/wp-content/uploads/2014/11/2014-11-02-00-06-321.jpg) The Principles of Uncertainty, by Maira Kalman\[/caption\]
+[![The Principles of Uncertainty, by Maira Kalman](images/2014-11-02-00-06-321.jpg)
 
 Have you ever found yourself picking up a new book without knowing much about it, leafing through the first few pages, maybe even a chapter, and suddenly unable to stop reading? It seldom happens to me to a severe extent. I find that, even given all the availability of time and comfort, I no longer read a book in one sitting.
 
