@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["assumptions", "dedication", "discipline", "learning", "stereotypes"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 Or: moments that have moved me in some strange ways - 1:

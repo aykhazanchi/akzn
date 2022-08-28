@@ -7,7 +7,7 @@ categories: ["fiction"]
 tags: ["100daysproject", "100shortscenes", "adolescence", "emotions", "friends", "growing-up", "life", "teenage"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 The door slams shut. Too loud, I think. But I'm upset and in such cases, drastic measures can be called for. A little less hard next time, I think. After all, a broken door would bring mother raining hell over me. Not to mention the grounding for eternity, or being forced to do the laundry, or make the bed in the morning. It seems there is never a dearth of awful chores around this house.

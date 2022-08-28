@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["creativity", "podcasts", "writing"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 I have started getting into podcasts again. Last night, I re-downloaded the default Apple app and subscribed to a few podcasts - The Accidental Creative, After the Jump, StartUp Podcast, TED Radio Hour. Initially I leaned more towards podcasts about creativity or tech but by the end of the day I had a good roundup of different fields.

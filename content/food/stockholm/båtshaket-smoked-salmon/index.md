@@ -4,7 +4,7 @@ date: 2022-07-31T13:33:14+02:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/stockholm/båtshaket-smoked-salmon/images/smoked-salmon.jpeg" alt="Båtshaket-Smoked-Salmon" width="50%" height="50%" >}}

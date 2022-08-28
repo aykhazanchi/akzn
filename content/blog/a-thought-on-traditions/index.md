@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["general", "traditions", "culture"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 Somewhere in 10th grade, little by little, I started picking up on Kashmiri through listening to folks in my family. It wasn't a requirement in the family -- most folks of my generation don't know much, or any, Kashmiri --, nor was it a conscious decision. I started by understanding common words, and then complete phrases, and occasionally I'd stop and ask for meanings of words that were new. Eventually, I got good enough at understanding it that I could drop in on most conversations and immediately pick up on what was being discussed. With my newfound power, I realized that I was part of a different circle now. I was still a kid but I could listen in on the conversations of the adults where till now I had no idea what was going on if the language wasn't Hindi. Then, with the air of an overzealous, innocent kid, knowing that I knew the meanings of some words and thinking that I knew them all, I figured it wouldn't be hard to hold a conversation. So I tried speaking it, and I butchered it completely.

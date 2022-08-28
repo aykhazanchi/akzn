@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["censorship", "emotions", "essays", "freshly-pressed", "inspiration", "journals", "life", "on-writing", "questions", "reading", "thoughts", "writers", "writing", "writing-advice"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 The first ever, rather personal, piece I wrote was for myself. I wrote it as a closure, a way to deal with an experience that had rattled me to the bone some years ago. It was about someone very close to me, but it wasn't for him, or even addressed to him; it was for me, and he just happened to be the subject of it. The fist person I ever wrote a real, true-to-the-bone piece for was myself.

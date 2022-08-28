@@ -7,7 +7,7 @@ categories: ["fiction"]
 tags: ["100dayproject", "100shortscenes", "children", "emotions", "growth", "writing"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 He raised his arms out just far enough from the boy that they wouldn't touch him. The boy could not have been older than three or four, paperweight teetering at the edge of the bench.

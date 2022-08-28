@@ -7,7 +7,7 @@ categories: ["fiction"]
 tags: ["100dayproject", "100shortscenes", "life", "memories", "relationships", "writing"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 One by one, she emptied the closets. First, the shirts went, with the trousers following suit. The neatly arranged drawer of ties went next, wrapped in her arms like snakes slithering over each other. All this while, I was standing by the door, and when I saw her come back in after the ties, I knew the rocking chair was going too. All of these things piled up in a corner of our small yard, each little addition raising the collective peak slightly higher.

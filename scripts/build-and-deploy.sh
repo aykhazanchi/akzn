@@ -1,6 +1,6 @@
 rm -rf ./public/akzn.me/*
 mkdir -p ./public/
-hugo --gc --minify
+hugo --gc --minify -D
 echo "----------------------------------------------------------"
 echo "Running a draft deployment"
 echo "----------------------------------------------------------"

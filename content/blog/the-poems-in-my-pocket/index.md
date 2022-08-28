@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["favorite-lines", "poem-in-your-pocket", "poems", "poetry-2", "quotes", "reading"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 Today was [Poem in Your Pocket Day](http://www.poets.org/national-poetry-month/poem-your-pocket-day). I didn't know this existed, until a few days ago when I read about it in one of those general promotional/recurring-update emails from the Academy of American Poets. I like to participate in these obscure little traditions. So naturally, I was walking around with a bunch of poems in my pockets. Here, I'm disclosing all the poems I chose, and a little about why I chose them. I've added links in the title for all the poems.

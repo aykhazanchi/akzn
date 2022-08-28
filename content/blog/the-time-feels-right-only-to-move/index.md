@@ -7,7 +7,7 @@ categories: ["general"]
 tags: ["cities", "growing", "hustle", "learning-essay", "life", "living", "new-york", "patience", "philadelphia", "public-transportation", "satisfaction", "suburbs", "sunday", "towns", "urgency", "value"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 _On Wanting to Live in Cities_
