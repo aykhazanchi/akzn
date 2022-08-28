@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-\[caption id="attachment\_1049" align="alignleft" width="250"\][![Image of a page from Maira Kalman's The Principles of Uncertainty](http://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12)](http://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12) Maira Kalman - The Principles of Uncertainty\[/caption\]
+\[caption id="attachment\_1049" align="alignleft" width="250"\][![Image of a page from Maira Kalman's The Principles of Uncertainty](https://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12)](https://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12) Maira Kalman - The Principles of Uncertainty\[/caption\]
 
 Can you imagine being so alone, so helpless that you're stuck in the middle-divider of a busy road on an electric wheelchair with your batteries bust? I couldn't even picture something like this happening until I saw it happen to someone today. It rattled me a little.
 
