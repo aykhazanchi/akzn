@@ -4,7 +4,7 @@ date: 2022-12-31T13:45:09+01:00
 categories: ["food"]
 tags: ["food", "photo"]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/food/tallinn/uzbeki-lamb-plov/images/uzbeki-lamb-plov.heic" alt="uzbeki-lamb-plov" width="50%" height="50%" >}}
