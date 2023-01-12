@@ -10,6 +10,8 @@ DisableComments: true
 draft: false
 ---
 
+Update Jan 13, 2023: I looked into this randomly today and turns out the Twilio Sandbox no longer works the same way it used to. Now it expires in 3 days. Will probably port this to React someday as I got a lot of input from people that they enjoyed this app.
+
 Sometime back I built a fun Whatsapp chatbot thing with which you could have some limited interaction. It's not really a full-fledged chatbot to be clear. It's basically a Flask API that sends you a Whatsapp photo of a cute pup along with a somewhat intellectual quote all using [Twilio](https://www.twilio.com/)'s Whatsapp API. I won't go over setting up the [Twilio Whatsapp Sandbox](https://www.twilio.com/whatsapp). There are plenty of guides for that around the web and it's fairly basic.
 
 The python code runs on [Heroku](https://www.heroku.com/) as a backend API and is fairly simple. It has a `/pup` endpoint where the requests come in and get parsed. The parsing is minimal — check if the user has requested what we have or deny it if the request is something we can't fulfill (to make it _kind of_ act like a chatbot). You can see it in action at the end of the post or sign up yourself to try it.
@@ -109,7 +111,7 @@ If you want to play around with send-pups, follow the four-step method to happin
 
 Note: The trial account has a limited free balance that you can use to send and receive messages as part of testing your app. I'll keep this going only as long as that balance is available. For production use you need to get your business case approved through Twilio as the Whatsapp API is not open to all just yet.
 
-See it in action -
+See a video recording [here](https://photos.app.goo.gl/mHabVm2H1EahHwDN7).
 
 <br>
 

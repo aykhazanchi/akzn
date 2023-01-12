@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/tallinn/RADO-mushroom-risotto/images/RADO-mushroom-risotto.heic" alt="RADO-mushroom-risotto" width="50%" height="50%" >}}
+{{< figure src="/food/tallinn/rado-mushroom-risotto/images/rado-mushroom-risotto.jpg" alt="rado-mushroom-risotto" width="50%" height="50%" >}}
 
 <br>
 

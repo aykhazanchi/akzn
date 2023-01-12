@@ -18,7 +18,7 @@ draft: false
 </figure>
 </a>
 
-<a href="https://akzn.me/blog">
+<a href="/blog/">
 <figure style="display: inline-block; margin: 4px;" >
 <img alt="blog" src="/images/blog.png" width="350" height="350">
 <figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">BLOG</figcaption>

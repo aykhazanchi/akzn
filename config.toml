@@ -153,31 +153,37 @@ enableRobotsTXT = true
         url = "/code/"
 
     [[menu.main]]
-        name = "Blog"
+        name = "Research"
         weight = 400
+        identifier = "research"
+        url = "/research/"
+
+    [[menu.main]]
+        name = "Blog"
+        weight = 500
         identifier = "blog"
         url = "/blog/"
 
     [[menu.main]]
         name = "Food"
-        weight = 500
+        weight = 600
         identifier = "food"
         url = "/food/"
     
     [[menu.main]]
         name = "Photos"
-        weight = 600
+        weight = 700
         identifier = "photos"
         url = "/photos/"
 
     [[menu.main]]
         name = "Now"
-        weight = 700
+        weight = 800
         identifier = "now"
         url = "/now/"
 
     [[menu.footer]]
-        name = "imprint"
-        weight = 1
-        identifier = "imprint"
-        url = "/imprint/"
+        name = "Copyright Ayushman Khazanchi"
+        weight = 900
+        identifier = "copyright"
+        url = "/copyright/"

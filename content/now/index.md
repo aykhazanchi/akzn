@@ -13,7 +13,7 @@ I am currently:
 - Located in Stockholm, Sweden since August, 2021
 - Studying for a Master of Science in Software Engineering of Distributed Systems
 - Working with IBM Bluesmarts
-- Enjoying the summer
+- Learning serverless ML
 
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 

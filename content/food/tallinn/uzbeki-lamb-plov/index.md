@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/tallinn/uzbeki-lamb-plov/images/uzbeki-lamb-plov.heic" alt="uzbeki-lamb-plov" width="50%" height="50%" >}}
+{{< figure src="/food/tallinn/uzbeki-lamb-plov/images/uzbeki-lamb-plov.jpg" alt="uzbeki-lamb-plov" width="50%" height="50%" >}}
 
 <br>
 

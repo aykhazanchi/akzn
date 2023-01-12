@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/lappis-meals/chicken-risotto/images/chicken-risotto.heic" alt="chicken-risotto" width="50%" height="50%" >}}
+{{< figure src="/food/lappis-meals/chicken-risotto/images/chicken-risotto.jpg" alt="chicken-risotto" width="50%" height="50%" >}}
 
 <br>
 

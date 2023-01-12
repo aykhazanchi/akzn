@@ -7,7 +7,7 @@ DisableComments: true
 draft: false
 ---
 
-{{< figure src="/food/lappis-meals/uzbeki-cheburek/images/uzbeki-cheburek.heic" alt="uzbeki-cheburek" width="50%" height="50%" >}}
+{{< figure src="/food/tallinn/uzbeki-cheburek/images/uzbeki-cheburek.jpg" alt="uzbeki-cheburek" width="50%" height="50%" >}}
 
 <br>
 
