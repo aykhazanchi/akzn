@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-Update Jan 13, 2023: I looked into this randomly today and turns out the Twilio Sandbox no longer works the same way it used to. Now it expires in 3 days. Will probably port this to React someday as I got a lot of input from people that they enjoyed this app.
+_**Update Jan 13, 2023: I looked into this randomly today and turns out the Twilio Sandbox no longer works the same way it used to. Now it expires in 3 days. Will probably port this to React someday as I got a lot of input from people that they enjoyed this app.**_
 
 Sometime back I built a fun Whatsapp chatbot thing with which you could have some limited interaction. It's not really a full-fledged chatbot to be clear. It's basically a Flask API that sends you a Whatsapp photo of a cute pup along with a somewhat intellectual quote all using [Twilio](https://www.twilio.com/)'s Whatsapp API. I won't go over setting up the [Twilio Whatsapp Sandbox](https://www.twilio.com/whatsapp). There are plenty of guides for that around the web and it's fairly basic.
 
