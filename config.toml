@@ -1,6 +1,7 @@
 baseURL = 'https://akzn.me/'
 title = 'Ayushman Khazanchi'
 theme = 'Anatole'
+enableGitInfo = true    # required for lastmod to work
 
 languageCode = 'en'
 DefaultContentLanguage = "en"

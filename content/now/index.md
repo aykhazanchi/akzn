@@ -6,7 +6,7 @@ tags: ["now"]
 draft: false
 ---
 
-Last updated: {{< param date >}}
+Last updated: {{< param lastmod >}}
 
 I am currently:
 
