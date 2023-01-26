@@ -1,10 +1,9 @@
 ---
 title: {{ replace .Name "-" " " | title }}
 date: {{ .Date }}
-thumbnail: blog/{{ .Name }}/images/
 images: ["blog/{{ .Name }}/images/"]
-categories: ["Code", "Exit Series", "Fiction", "General", "Poetry", "Food"]
-tags: ["code","exit series", "fiction", "general", "poetry", "food"]
+categories: ["code", "exit-series", "fiction", "general", "poetry", "food", "travel"]
+tags: ["code","exit series", "fiction", "general", "poetry", "food", "travel"]
 series: []
 DisableComments: true
 draft: true
