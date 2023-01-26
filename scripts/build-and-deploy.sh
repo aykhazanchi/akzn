@@ -1,8 +1,9 @@
 rm -rf ./public/akzn.me/*
 mkdir -p ./public/
-hugo -D --gc --minify
+hugo --gc --minify
 echo "----------------------------------------------------------"
 echo "Running a draft deployment"
+echo "Make sure all drafts are set to false in order to publish them"
 echo "----------------------------------------------------------"
 netlify deploy
 echo "----------------------------------------------------------"
