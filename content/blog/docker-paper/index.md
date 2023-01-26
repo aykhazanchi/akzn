@@ -1,7 +1,7 @@
 ---
 title: Analyzing Dockerized Web App Performance Through Load Testing
 date: 2022-11-09T12:29:15+01:00
-categories: ["Research"]
+categories: ["research"]
 tags: ["code","research"]
 series: []
 DisableComments: true

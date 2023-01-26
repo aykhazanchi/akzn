@@ -2,7 +2,7 @@
 title: The Large Glass
 date: 2022-09-19T13:29:19+02:00
 images: ["blog/the-large-glass/images/"]
-categories: ["General"]
+categories: ["general"]
 tags: ["general"]
 series: []
 DisableComments: false
