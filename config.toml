@@ -153,12 +153,6 @@ enableRobotsTXT = true
         url = "/code/"
 
     [[menu.main]]
-        name = "Research"
-        weight = 400
-        identifier = "research"
-        url = "/research/"
-
-    [[menu.main]]
         name = "Blog"
         weight = 500
         identifier = "blog"
