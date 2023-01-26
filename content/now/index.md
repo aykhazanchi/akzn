@@ -10,10 +10,10 @@ Last updated: {{< param date >}}
 
 I am currently:
 
-- Located in Stockholm, Sweden since August, 2021
+- Living in Stockholm, Sweden since August, 2021
+- Working part-time with IBM Bluesmarts
+- Conducting my master thesis at [Hopsworks](https://hopsworks.ai)
 - Studying for a Master of Science in Software Engineering of Distributed Systems
-- Working with IBM Bluesmarts
-- Learning serverless ML
 
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 
