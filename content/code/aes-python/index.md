@@ -15,7 +15,7 @@ Recently for an Applied Cryptography class at KTH I had to write from scratch an
 
 ### Overall structure of AES
 
-<img align="right" caption="A visualization of the AES round function" alt="A visualization of the AES round function" width="400" height="600" src="/blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp">
+<img align="right" caption="A visualization of the AES round function" alt="A visualization of the AES round function" width="400" height="600" src="/code/aes-python/images/AES_Rijndael_Round_Function.webp">
 
 AES is quite a big and detailed process. I won’t go into the details of how each round works as that would require a series of posts instead of one post. Maybe in the future I’ll expand on this. Here is the high-level structure of the algorithm that I got from Wikipedia –
 

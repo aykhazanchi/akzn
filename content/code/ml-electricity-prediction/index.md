@@ -1,7 +1,7 @@
 ---
 title: Predicting Daily Electricity Demand in New York, USA
 date: 2023-01-26T15:55:11+01:00
-images: ["blog/ml-electricity-prediction/images/"]
+images: ["code/ml-electricity-prediction/images/"]
 categories: ["code"]
 tags: [code, machine learning, serverless, real-world systems]
 skills: [Python, Machine Learning, Hopsworks, Modal, HuggingFace, Presentation]
@@ -41,7 +41,7 @@ Hopsworks is used as feature store and model registry, daily instance generation
 as functions in Modal and the UIs for online inference and monitoring are implemented using Hugginface spaces. 
 The service architecture is (roughly) described in the following diagram.   
 
-![architecture diagram](https://github.com/aykhazanchi/id2223-scalable-ml/blob/master/proj/report/service_arch.drawio.png)
+<img caption="Service Architecture" alt="image showing the system service architecture" src="/code/ml-electricity-prediction/images/service_arch.png">
 
 The source code for the feature, training, and inference pipelines as well as for the monitoring and online 
 inference interfaces is implemented in [proj](.), and the main parts are briefly described below.  
@@ -64,7 +64,7 @@ preparation steps applied are the following.
 Once the data is complete, the dataframe is uploaded to the Hopsworks feature store. The dataframe (first 5 
 instances) is shown below.
 
-![features](report/df_features.png)
+<img caption="Features dataframe" alt="dataframe image showing features" src="/code/ml-electricity-prediction/images/df_features.png">
 
 ### Training pipeline
 

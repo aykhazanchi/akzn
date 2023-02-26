@@ -1,7 +1,6 @@
 ---
 title: Certificate Management in DevSecOps
 date: 2022-05-10
-images: ["blog/cert-management-devsecops/images/"]
 categories: ["code"]
 tags: [code, devops, devsecops, certificates, cloud, security]
 skills: [Certificates, Presentation]
