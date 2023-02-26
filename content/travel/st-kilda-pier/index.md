@@ -1,8 +1,8 @@
 ---
-title: "St Kilda Pier - Melbourne"
+title: "St Kilda Pier, Melbourne"
 date: 2022-04-27T00:27:47+02:00
 categories: ["travel"]
-tags: ["travel", "st kilda", "melbourne", "australia"]
+tags: [st kilda, melbourne, australia]
 DisableComments: true
 draft: false
 ---

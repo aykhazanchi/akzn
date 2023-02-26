@@ -2,9 +2,9 @@
 title: "Tallinn, Estonia"
 date: 2023-01-13T00:58:54+01:00
 categories: ["travel"]
-tags: ["travel"]
+tags: [estonia, tallinn, baltics]
 DisableComments: true
-draft: true
+draft: false
 ---
 
 {{< figure src="/travel/tallinn-estonia/0.jpg" alt="tallinn-estonia" width="50%" height="50%" >}}
