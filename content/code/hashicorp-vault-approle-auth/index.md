@@ -4,7 +4,8 @@ date: 2020-08-11
 thumbnail: blog/hashicorp-vault-approle-auth/images/
 images: ["blog/hashicorp-vault-approle-auth/images/"]
 categories: ["code"]
-tags: ["approle", "auth", "authentication", "automation", "cicd", "cloud", "cloud-engineering", "code", "devops", "hashicorp", "hashicorp-vault", "tech", "vault"]
+tags: [approle, auth, microservice architecture, authentication, automation, cicd, cloud, cloud engineering, code, devops, hashicorp, hashicorp-vault, tech, vault]
+skills: [Hashicorp Vault, Cloud Development, Microservices]
 series: []
 DisableComments: true
 draft: false

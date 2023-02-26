@@ -3,7 +3,8 @@ title: Predicting Daily Electricity Demand in New York, USA
 date: 2023-01-26T15:55:11+01:00
 images: ["blog/ml-electricity-prediction/images/"]
 categories: ["code"]
-tags: ["code", "machine learning", "serverless", "real-world systems"]
+tags: [code, machine learning, serverless, real-world systems]
+skills: [Python, Machine Learning, Hopsworks, Modal, HuggingFace, Presentation]
 series: []
 DisableComments: true
 draft: false

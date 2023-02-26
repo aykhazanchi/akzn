@@ -1,12 +1,15 @@
 ---
 title: Analyzing Dockerized Web App Performance Through Load Testing
-date: 2022-11-09T12:29:15+01:00
-categories: ["research"]
-tags: ["code","research"]
+date: 2022-11-09
+categories: ["code", "research"]
+tags: [code, research, docker, nodejs, express, mysql, prisma, api, prometheus, grafana, jmeter, iostat]
+skills: [NodeJS, Express, MySQL, Prisma, API development, Docker, Prometheus, Grafana, JMeter, iostat]
 series: []
 DisableComments: true
 draft: false
 ---
+
+Code for the test experiment setup for analyzing dockerized web app performance through load testing. More about the research can be found here: [Github Link](https://github.com/aykhazanchi/expensy)
 
 This was a research project conducted during the II2202 Research Methodology and Scientic Writing class at KTH Royal Institute of Technology, Sweden. The abstract is below and the full report can be viewed with the link at the end.
 

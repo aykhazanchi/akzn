@@ -1,32 +1,127 @@
 portfolioitems:
   # portfolio category
-  - title: Coding Projects
+  - title: Code
     # items within a category
     portfolioitem:
-      - name: Project 1
+      - name: Electricity Demand Prediction using Serverless Machine Learning
         image: '/images/portfolio/code.jpg'
-        link: https://gohugo.io/
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        link: https://github.com/aykhazanchi/id2223-scalable-ml/tree/master/proj
+        description: 'This is a serverless machine learning system built to predict the daily electricity demand in New York, USA. It consists of independent feature, training, and inference pipelines as well as a continuously updating historical record of inference, all conducted using serverless technologies. I presented this project at [PyData Stockholm Meetup on Feb 9, 2023](https://www.meetup.com/pydatastockholm/events/291224301/).'
         tags:
-          - Tag 1
-          - Tag 2
+          - Python
+          - Hopsworks
+          - Modal
+          - HuggingFace
         status: 'Finished'
-        start: '2020'
-        end: '2021'
+        # start: '2020'
+        # end: '2021'
         authors:
-          - Author 1
-          - Author 2
+          - Ayushman Khazanchi
+          - Remo Scolati
 
-      - name: Project 2
+      - name: Tiny AES
+        image: '/images/portfolio/code.jpg'
+        link: /blog/tiny-aes-in-python
+        description: 'A tiny implementation of AES ECB encryption in Python.'
+        tags:
+          - Python
+        status: 'Finished'
+        # start: '2020'
+        # end: '2021'
+        authors:
+          - Ayushman Khazanchi
+
+      - name: Distributed Intelligent Agents
         image: '/images/portfolio/code.jpg'
         link: https://gohugo.io/
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        description: 'Various different GAMA prototypesbuilt around concepts of distributed agent communication, negotiation, auctions, and resolution based on the GAML simulation language. Picked up the basics of this language within a few days which is quite a feat in itself considering the absolute lack of good documentation around it.'
         tags:
-          - Tag 1
-          - Tag 2
+          - GAML
         status: 'Finished'
         start: '2020'
         end: '2021'
         authors:
-          - Author 1
-          - Author 2
+          - Ayushman Khazanchi
+
+      - name: Eventy
+        image: '/images/portfolio/code.jpg'
+        link: https://gohugo.io/
+        description: 'A rapid prototype app that I developed for the ID2207 - Modern Methods of Software Engineering course. The app was an event planner app that depicted certain user and data control flows based around a brief for a Swedish event planning company provided to us during the course. The prototype has functionality for ticket creation and having it pass through the various stages of approval/rejection by each concerned department until completion of the workflow.'
+        tags:
+          - Python
+          - Flask
+          - SQLite
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi
+
+      - name: Distributed Systems
+        image: '/images/portfolio/code.jpg'
+        link: https://gohugo.io/
+        description: 'Some simple prototypes written in Erlang as part of our Distributed Systems course at KTH:\n - Rudy: simple web server\n - Routy: small routing protocol\n - Loggy: logical time logger\n - Groupy: group membership service\n - Chordy: distributed hash table'
+        tags:
+          - Erlang
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi
+
+      - name: Send Pups Bot
+        image: '/images/portfolio/code.jpg'
+        link: /send-pups
+        description: "I made a chatbot that sends you photos of cute pups on Whatsapp. It has a basic Flask backend and uses Twilio's Whatsapp API. It uses the free Sandbox trial by Twilio and is deployed on Heroku so it may take some time to respond the first time as it wakes up."
+        tags:
+          - Python
+          - Flask
+          - Twilio API
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi
+  # portfolio category
+  - title: Creative
+    # items within a category
+    portfolioitem:
+      - name: \#100CitiesFromMemory
+        image: '/images/portfolio/code.jpg'
+        link: https://www.instagram.com/explore/tags/100citiesfrommemory/
+        description: "I've long wanted to a do #100DaysProject. At the end of March 2020, I was convinced by a friend to start one. I started a writing project that imagined a city from memory as a response to a picture I had taken. I only got to 62 cities 😔 before it got a bit overwhelming during the Coronavirus-cum-lockdown-cum-pandemic situation. I will return to this soon, though. You can go through the project here."
+        tags:
+          - Instagram
+          - Writing
+          - Photography
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi
+      
+      - name: Philly Skyline Bot
+        image: '/images/portfolio/code.jpg'
+        link: https://www.instagram.com/p/BhCg-BfHsJs
+        description: "Sometime back in 2017 I used a spare raspberry pi to take photos of the Philly Skyline from my then apartment window. The bot used to take a photo daily at 8 am and 8 pm with the raspberry pi camera module and then tweet the photos to the Twitter account. I think it was going for a month or two until I had to eventually change apartments. I made a timelapse of the skyline (with music and everything!) here and the now-defunct Twitter account is here."
+        tags:
+          - Python
+          - Raspberry Pi
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi
+
+      - name: Coded By Kids, Philadelphia
+        image: '/images/portfolio/code.jpg'
+        link: https://codedbykids.com/
+        description: "Sometime back in 2017 I used a spare raspberry pi to take photos of the Philly Skyline from my then apartment window. The bot used to take a photo daily at 8 am and 8 pm with the raspberry pi camera module and then tweet the photos to the Twitter account. I think it was going for a month or two until I had to eventually change apartments. I made a timelapse of the skyline (with music and everything!) here and the now-defunct Twitter account is here."
+        tags:
+          - Python
+          - Raspberry Pi
+        status: 'Finished'
+        start: '2020'
+        end: '2021'
+        authors:
+          - Ayushman Khazanchi

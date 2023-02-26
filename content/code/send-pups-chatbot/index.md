@@ -1,14 +1,15 @@
 ---
-title: Send Pups Chatbot with Twilio and Whatsapp
+title: "Send Pups Chatbot"
 date: 2020-08-13
-thumbnail: blog/chatbot-with-twilio-and-whatsapp/images/
-images: ["blog/chatbot-with-twilio-and-whatsapp/images/"]
 categories: ["code"]
-tags: ["api", "application", "chatbot", "development", "flask", "gunicorn", "heroku", "programming", "python", "python-flask", "rest-api", "tech", "twilio", "twilio-whatsapp", "web-applications"]
+tags: [code,api, application, chatbot, development, flask, gunicorn, heroku, programming, python, python-flask, rest-api, tech, twilio, twilio-whatsapp, web-applications]
+skills: [Python, Flask, Twilio API, Heroku, Serverless Functions]
 series: []
 DisableComments: true
 draft: false
 ---
+
+[Github Link](https://github.com/aykhazanchi/send-pups)
 
 _**Update Jan 13, 2023: I looked into this randomly today and turns out the Twilio Sandbox no longer works the same way it used to. Now it expires in 3 days. Will probably port this to React someday as I got a lot of input from people that they enjoyed this app.**_
 
@@ -104,7 +105,7 @@ web: gunicorn bot:app
 
 If you want to play around with send-pups, follow the four-step method to happiness:
 
-1. Add +14155238886 to whatsapp contacts. This is the Twilio Sandbox number I received.
+1. Add **NUMBER REDACTED** to whatsapp contacts. This is the Twilio Sandbox number I received.
 2. Send `join instead-exclaimed` through whatsapp to the above number to sign up to receive intellectual pups
 3. Type `send pups` to start receiving intellectual pups
 4. Achieve happiness

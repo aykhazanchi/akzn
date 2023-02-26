@@ -1,12 +1,15 @@
 ---
-title: "Tiny AES in Python"
+title: "Tiny AES Python"
 date: 2022-04-14
-images: ["blog/tiny-aes-in-python/images/AES_Rijndael_Round_Function.webp"]
 categories: ["code"]
-tags: ["advanced-encryption-standard", "aes", "aes-ecb", "applied-crypto", "code", "cryptography", "encryption", "kth", "kth-royal-institute-of-technology", "python", "security"]
+tags: [code, aes, aes ecb, python, cryptography, advanced encryption standard, applied cryptography, encryption, security]
+skills: [Python, Cryptography]
+series: []
 DisableComments: true
 draft: false
 ---
+
+A tiny implementation of AES ECB encryption in Python. [Github link of source code.](https://github.com/aykhazanchi/tiny-aes)
 
 Recently for an Applied Cryptography class at KTH I had to write from scratch an implementation of the AES encryption. AES is a block cypher encryption that operates on blocks of different sizes. I implement AES-128 in ECB mode which takes 16 byte blocks in a matrix of 4 by 4. What follows is a small implementation in Python with some explanations around each AES step.
 
@@ -251,4 +254,3 @@ Source code – [Tiny AES](https://github.com/aykhazanchi/tiny-aes)
 
 <br>
 
----
