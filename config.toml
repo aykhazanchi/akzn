@@ -66,7 +66,7 @@ enableRobotsTXT = true
     # static page as main page instead of list of posts
     mainSections = []
 
-    images = ["images/site-feature-image.png"]
+    images = ["images/me.png"]
 
     # postSectionName = "blog"
     fullPostContent = false     # disable full posts on home page

@@ -4,9 +4,11 @@ date: 2022-04-25T01:16:08+02:00
 draft: false
 ---
 
+<div style="max-width:1100px">
+
 <a href="/about/">
 <figure style="display: inline-block; margin: 4px;" >
-<img alt="about" src="/images/me-kayak.jpg" width="350" height="350">
+<img alt="about" src="/images/me.jpeg" width="350" height="350">
 <figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">ABOUT</figcaption>
 </figure>
 </a>
@@ -45,3 +47,5 @@ draft: false
 <figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">NOW</figcaption>
 </figure>
 </a>
+
+</div>
