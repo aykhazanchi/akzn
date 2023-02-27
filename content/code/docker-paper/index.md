@@ -3,7 +3,7 @@ title: Analyzing Dockerized Web App Performance Through Load Testing
 date: 2022-11-09
 categories: ["code", "research"]
 tags: [code, research, docker, nodejs, express, mysql, prisma, api, prometheus, grafana, jmeter, iostat]
-skills: [NodeJS, Express, MySQL, Prisma, API development, Docker, Prometheus, Grafana, JMeter, iostat]
+skills: [NodeJS, Express, MySQL, Prisma, API development, Docker, Research]
 series: []
 DisableComments: true
 draft: false

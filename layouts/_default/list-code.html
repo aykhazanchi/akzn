@@ -14,7 +14,6 @@
           <li class="archive__list-item">
             <a class="archive__list-title" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
             <div class="archive__list-date">{{ range .Params.skills }} {{ . }}{{ end }}</div> - 
-            <div class="archive__list-date">{{ .ReadingTime }} min</div> - 
             <div class="archive__list-date">
               {{ if isset .Site.Params "listdateformat" }}
                 {{ .Date.Format .Site.Params.listDateFormat }}
