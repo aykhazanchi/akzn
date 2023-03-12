@@ -16,7 +16,7 @@ Dried and changed I watch the rest of the storm sitting by my window with a hot 
 
 * * *
 
-This post is part of [Exit Series](https://akzn.me/blog/category/exit-series/).
+This post is part of [Exit Series](/blog/category/exit-series/).
 
 <br>
 

@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-_Collections_ is an attempt at keeping a monthly record of the pieces of writing/art/media that I've found valuable and interesting. More about the series [here](https://akzn.me/blog/category/collections/).
+_Collections_ is an attempt at keeping a monthly record of the pieces of writing/art/media that I've found valuable and interesting. More about the series [here](/blog/category/collections/).
 
 [// The Quest for the Next Billion Dollar Color](https://www.bloomberg.com/features/2018-quest-for-billion-dollar-red/) _(World)_
 

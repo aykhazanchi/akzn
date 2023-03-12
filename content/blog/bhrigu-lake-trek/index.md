@@ -14,7 +14,7 @@ draft: false
 
 Mount Ladakhi
 
-At the end of July I went on a four-day trek to Bhrigu Lake, an alpine lake at an elevation of 14000 feet above sea level. Since my last trek to [Nag Tibba](https://akzn.me/blog/the-year-so-far/) in March 2019 I had been wanting to do a slightly longer trek (Nag Tibba is a two-day trek). I also wanted to touch a higher altitude (Nag Tibba goes to ~10k feet).
+At the end of July I went on a four-day trek to Bhrigu Lake, an alpine lake at an elevation of 14000 feet above sea level. Since my last trek to [Nag Tibba](/blog/the-year-so-far/) in March 2019 I had been wanting to do a slightly longer trek (Nag Tibba is a two-day trek). I also wanted to touch a higher altitude (Nag Tibba goes to ~10k feet).
 
 Bhrigu lake sits at about 6000 feet above Manali and the starting point for the trek, Gulaba -- an hour or so away from Manali -- is the checkpoint for vehicles going to Rohtang Pass. Bhrigu lake is the [perfect high-altitude trek](https://indiahikes.com/bhrigu-lake/) for a long weekend and offers something unique. It's a meadow trek that goes well above the tree-line on Day 2 itself. Meadows in general usually take days to get to because of their high altitudes. This also means that there is a higher-than-usual chance of getting altitude sickness on this trek since you're forcing your ascent fast. I went with a friend and we were lucky that our overall group was only 10 people. Because of the small size of the group and everyone's varied background we all ended up forming a close bond over the course of the trek. I've realized through this experience what people mean when they say small groups are much better for trekking. There's a lot more interpersonal interaction between people.
 

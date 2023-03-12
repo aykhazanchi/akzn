@@ -10,7 +10,7 @@ DisableComments: true
 draft: false
 ---
 
-Collections is an attempt at keeping a monthly record of the pieces of writing/art/media that I’ve found valuable and interesting. More about the series [here](https://akzn.me/blog/category/collections/).
+Collections is an attempt at keeping a monthly record of the pieces of writing/art/media that I’ve found valuable and interesting. More about the series [here](/blog/category/collections/).
 
 _[// The Bill Gates Line](https://stratechery.com/2018/the-bill-gates-line/) (Tech)_
 
