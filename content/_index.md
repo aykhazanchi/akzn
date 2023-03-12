@@ -34,10 +34,10 @@ draft: false
 </figure>
 </a>
 
-<a href="/photos/">
+<a href="/travel/">
 <figure style="display: inline-block; margin: 4px;" >
-<img alt="photos" src="/images/photos.png" width="350" height="350">
-<figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">PHOTOS</figcaption>
+<img alt="travel" src="/images/travel.png" width="350" height="350">
+<figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">TRAVEL</figcaption>
 </figure>
 </a>
 
