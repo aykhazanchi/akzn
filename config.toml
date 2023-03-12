@@ -1,11 +1,3 @@
-[module]
-  # uncomment line below for temporary local development of module
-  # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
-  [[module.imports]]
-    path = "github.com/lxndrblz/anatole"
-    disable = false
-
-
 baseURL = 'https://akzn.me/'
 title = 'Ayushman Khazanchi'
 enableGitInfo = true    # required for lastmod to work
@@ -16,6 +8,14 @@ DefaultContentLanguage = "en"
 summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
+
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
+  [[module.imports]]
+    path = "github.com/lxndrblz/anatole"
+    disable = false
+
 theme = 'Anatole'
 
 [markup]
