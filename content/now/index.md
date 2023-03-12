@@ -10,6 +10,8 @@ Last updated: {{< param lastmod >}}
 
 I am currently:
 
+- Looking for full-time work starting July/August 2023
+- Learning Go
 - Living in Stockholm, Sweden since August, 2021
 - Working part-time with IBM Bluesmarts
 - Conducting my master thesis at [Hopsworks](https://hopsworks.ai)
