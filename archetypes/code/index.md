@@ -9,8 +9,6 @@ DisableComments: true
 draft: true
 ---
 
-## {{ replace .Name "-" " " | title }}
-
 [Github Link]()
 
 
