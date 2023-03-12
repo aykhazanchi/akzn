@@ -1,6 +1,13 @@
+[module]
+  # uncomment line below for temporary local development of module
+  # replacements = "github.com/lxndrblz/anatole -> ../../anatole"
+  [[module.imports]]
+    path = "github.com/lxndrblz/anatole"
+    disable = false
+
+
 baseURL = 'https://akzn.me/'
 title = 'Ayushman Khazanchi'
-theme = 'Anatole'
 enableGitInfo = true    # required for lastmod to work
 
 languageCode = 'en'
@@ -9,6 +16,7 @@ DefaultContentLanguage = "en"
 summarylength = 10
 enableEmoji = true
 enableRobotsTXT = true
+theme = 'Anatole'
 
 [markup]
     [markup.goldmark]
@@ -72,7 +80,7 @@ enableRobotsTXT = true
     fullPostContent = false     # disable full posts on home page
     readMore = true     # enable truncated posts to have read-more link
     reversepagetitle = true # When set to 'true', the Window Title will be reversed to 'Title | Author' instead of the default 'Author | Title'
-    enableMediumZoom = true     # enable medium-like zoom on images
+    enableMediumZoom = false     # enable medium-like zoom on images
 
     contentratio = 0.8      # smaller sidebar
     hidesidebar = false      # don't hide sidebar on content pages
