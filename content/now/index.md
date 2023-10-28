@@ -10,12 +10,9 @@ Last updated: {{< param lastmod >}}
 
 I am currently:
 
-- Looking for full-time work starting July/August 2023
-- Learning Go
+- Learning Go and ink-sketching
 - Living in Stockholm, Sweden since August, 2021
-- Working part-time with IBM Bluesmarts
-- Conducting my master thesis at [Hopsworks](https://hopsworks.ai)
-- Studying for a Master of Science in Software Engineering of Distributed Systems
+- Working in the [cloud](https://volumental.com)
 
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 
