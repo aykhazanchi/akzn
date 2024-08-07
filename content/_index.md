@@ -41,6 +41,13 @@ draft: false
 </figure>
 </a>
 
+<a href="/likes/">
+<figure style="display: inline-block; margin: 4px;" >
+<img alt="likes" src="/images/robotdinner.png" width="350" height="350">
+<figcaption style="font-family: 'PT Sans Narrow'; font-weight:700">LIKES</figcaption>
+</figure>
+</a>
+
 <a href="/now/">
 <figure style="display: inline-block; margin: 4px;" >
 <img alt="now" src="/images/now.png" width="350" height="350">

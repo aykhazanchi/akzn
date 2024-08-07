@@ -180,13 +180,19 @@ theme = 'Anatole'
         url = "/travel/"
 
     [[menu.main]]
-        name = "Now"
+        name = "Likes"
         weight = 800
+        identifier = "likes"
+        url = "/likes/"
+
+    [[menu.main]]
+        name = "Now"
+        weight = 900
         identifier = "now"
         url = "/now/"
 
     [[menu.footer]]
         name = "Copyright Ayushman Khazanchi"
-        weight = 900
+        weight = 1000
         identifier = "copyright"
         url = "/copyright/"
