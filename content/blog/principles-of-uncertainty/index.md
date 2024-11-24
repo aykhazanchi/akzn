@@ -1,16 +1,15 @@
 ---
-title: "Can You Imagine?"
+title: "The Principles of Uncertainty - Maira Kalman"
 date: 2015-04-27T14:10:20+02:00
-thumbnail: blog/can-you-imagine/images/kalman11.jpg
-images: ["blog/can-you-imagine/images/kalman11.jpg"]
 categories: ["general"]
-tags: ["age", "community", "dignity", "help", "life", "love", "old-age", "struggles"]
+tags: ["maira kalman", "illustrations", "illustrated books", "principles of uncertainty", "design"]
 series: []
 DisableComments: true
 draft: false
 ---
 
-[![Image of a page from Maira Kalman's The Principles of Uncertainty](https://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12)](https://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12) Maira Kalman - The Principles of Uncertainty
+
+{{< figure src="https://insight.randomhouse.com/fullpage.do?pContentType=JPG&pName=fullpage&pISBN=9780143116462&pPageID=12" alt="Image of a page from Maira Kalman's The Principles of Uncertainty" width="40%" height="40%" style="float:left">}}
 
 Can you imagine being so alone, so helpless that you're stuck in the middle-divider of a busy road on an electric wheelchair with your batteries bust? I couldn't even picture something like this happening until I saw it happen to someone today. It rattled me a little.
 
@@ -29,6 +28,8 @@ I walked away a little heartbroken, a little disappointed that for all the money
 I turned around after a few steps to check if he was still there but he wasn't.
 
 
-<br>
+{{< figure src="/blog/principles-of-uncertainty/images/kalman11.jpg" alt="Image of a page from Maira Kalman's The Principles of Uncertainty" width="40%" height="40%" style="float:left; display:inline">}}
 
----
+{{< figure src="/blog/principles-of-uncertainty/images/kalman_principlesofuncertainty.jpg" alt="Image of a page from Maira Kalman's The Principles of Uncertainty" width="40%" height="40%" style="float:left; display:inline" >}}
+
+<br>

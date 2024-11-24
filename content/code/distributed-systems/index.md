@@ -20,5 +20,3 @@ Some simple prototypes written in Erlang as part of our Distributed Systems cour
 - Chordy: distributed hash table
 
 <br>
-
----

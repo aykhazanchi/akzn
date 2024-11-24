@@ -1,8 +1,6 @@
 ---
 title: The Weight of Some Books
 date: 2014-11-03
-thumbnail: blog/the-weight-of-some-books/images/
-images: ["blog/the-weight-of-some-books/images/"]
 categories: ["general"]
 tags: ["art", "books", "illustrated-books", "illustrations", "maira-kalman", "the-principles-of-uncertainty"]
 series: []
@@ -29,5 +27,3 @@ It is also, by far, one of the most profound books I’ve read in a long, long w
 When I finished reading the book, I thought against writing about it, not because I didn’t want to share it with people but mostly because I didn’t think any description I could come up with regards the book would do it any sufficient justice. I finished it, put it aside and, over the next few weeks, occasionally went back to it flicking to a random page and seeing what came up. It was one of these random page-flipping moments that convinced me to write about it. On an otherwise blank white page were two handwritten lines mentioning Freud’s belief that “what we say means something. And must be spoken.” Below it lies a paragraph on Wittgenstein’s humorous counter-belief. but I’ll let you pick up the book for that one.
 
 <br>
-
----

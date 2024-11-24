@@ -1,8 +1,6 @@
 ---
 title: Wave - Sonali Deraniyagala
 date: 2014-02-21
-thumbnail: blog/wave-sonali-deraniyagala/images/
-images: ["blog/wave-sonali-deraniyagala/images/"]
 categories: ["general"]
 tags: ["books", "deraniyagala", "emotions", "goodreads", "grief", "loss", "love", "memoir", "pain", "reading", "suffering", "tragedy", "wave"]
 series: []
@@ -27,5 +25,3 @@ Wave is about love and acceptance as much as it is about grief, although it is h
 Most of us will never know the answers to such questions, let alone bear witness to a scale of despair that Deraniyagala went through; but it is only through the few precious accounts such as that of Deraniyagala that we can even begin to ask ourselves such questions.
 
 <br>
-
----

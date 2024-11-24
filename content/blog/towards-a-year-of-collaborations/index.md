@@ -1,8 +1,6 @@
 ---
 title: Towards a Year of Collaborations
 date: 2016-01-08
-thumbnail: blog/towards-a-year-of-collaborations/images/
-images: ["blog/towards-a-year-of-collaborations/images/"]
 categories: ["general"]
 tags: ["art", "collaborations", "creativity", "inspirations", "projects-2", "writing"]
 series: []
@@ -21,5 +19,3 @@ What I'm seeing though is that the process of collaboration is often one of the 
 Something that I really love about this process is that whether it's complete strangers or people you're close with, simply collaborating on something over a period of time can bring people to a deeper understanding of each other - or at least of each other's thought process. As a direct influence of this, I've decided this year to be open to more collaborations of all sorts, and I'm looking for anyone willing to do - quite literally - any kind of creative collaboration on their mind. More often than not the hardest part is simply sticking to the routine as opposed to actually creating art. That part tends to happen pretty easily. So, if you want to do something of this sort, feel free to reach out - stranger or not. :)
 
 <br>
-
----

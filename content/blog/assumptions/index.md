@@ -1,11 +1,8 @@
 ---
 title: Assumptions
 date: 2015-09-21
-thumbnail: blog/assumptions/images/
-images: ["blog/assumptions/images/"]
 categories: ["general"]
 tags: ["assumptions", "dedication", "discipline", "learning", "stereotypes"]
-series: []
 DisableComments: true
 draft: false
 ---
@@ -21,5 +18,3 @@ Whoa. What was that. Not only did I feel absolutely stupid thinking everyone int
 I don't remember the last time I did something religiously, without skipping a beat, for even a quarter of that length of time. Sigh.
 
 <br>
-
----

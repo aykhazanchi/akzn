@@ -1,8 +1,6 @@
 ---
 title: Reading - April 2018
 date: 2018-04-30
-thumbnail: blog/reading-april-2018/images/
-images: ["blog/reading-april-2018/images/"]
 categories: ["general"]
 tags: ["amy-tan", "art", "articles", "collections", "collections-april", "death", "fiction", "game", "interactive-media", "interviews", "junot-diaz", "media", "nicky-case", "social", "tech", "trauma", "trust", "world", "writing"]
 series: ["Collections"]
@@ -37,5 +35,3 @@ This small interview has a lot of wisdom.
 Junot Diaz is in my top 3 favorite writers and the powerful force and beauty of his writing is visible in this unfortunate personal story.
 
 <br>
-
----

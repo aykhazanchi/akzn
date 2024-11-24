@@ -1,8 +1,6 @@
 ---
 title: Some Thoughts on Using the iPhone
 date: 2016-03-05
-thumbnail: blog/some-thoughts-on-using-the-iphone/images/
-images: ["blog/some-thoughts-on-using-the-iphone/images/"]
 categories: ["general"]
 tags: ["android", "design", "ios", "iphone", "mobile", "smartphones", "tech"]
 series: []
@@ -51,5 +49,3 @@ _**Exterior**_
 The metal body of the iPhone is vastly superior to the plastic of the Nexus phones. This is something that has definitely impressed me. The exterior design of the iPhone is amazing, and you can tell the quality apart. In fact, if I switch back to Android finding a phone with a metal body will be pretty high on the list.
 
 <br>
-
----

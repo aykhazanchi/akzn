@@ -15,5 +15,3 @@ draft: false
 An ansible module I wrote a long time back to automatically install and setup a new Macbook in the way I used to have it setup. This is no longer updated.
 
 <br>
-
----

@@ -14,5 +14,3 @@ draft: false
 Various different GAMA prototypes built around concepts of distributed agent communication, negotiation, auctions, and resolution based on the GAML simulation language. Picked up the basics of this language within a few days which is quite a feat in itself considering the absolute lack of good documentation around it.
 
 <br>
-
----

@@ -1,8 +1,6 @@
 ---
 title: Observations From a Week in Europe
 date: 2017-10-12
-thumbnail: blog/observations-from-a-week-in-europe/images/
-images: ["blog/observations-from-a-week-in-europe/images/"]
 categories: ["general"]
 tags: ["amsterdam", "apple", "belgium", "cash", "digital-payments", "europe", "france", "google", "travels"]
 series: []
@@ -22,8 +20,7 @@ I've spent a week traveling through the Netherlands, Belgium, and France. I wrot
 8. Regardless of your thoughts on the iPhone, I've realized Apple is successful in some ways because they make only _one_ _kind_ of a thing. If you like to be different from the crowd, this sucks, but the power of ubiquity that Apple has is such that no one knew what the heck I was holding in my hand since it wasn’t an iPhone.
 9. Another point on above - USB-C is not as ubiquitous as I'd assumed. You can get spare cables for Apple's lightning connector at random outlets anywhere but it's not the same for USB-C. A lot of airports still sell micro-USB cables and you would have to have an adapter for those.
 10. Designer stores and mass-market labels are literally the same everywhere. Also all fashion seems to just copy itself. You’ll find the same exact shoes in Zara and H&M but with different price/label tags of course. Hard to tell where the trend starts.
-11. European outlets look ugly imo ![](images/dd8f3b0b-2f7d-43f8-b41d-8e69e84c18fb.jpg)
+11. European outlets look ugly imo 
+{{< figure src="/blog/observations-from-a-week-in-europe/images/outlet.jpg" width="50%" height="50%" >}} 
 
 <br>
-
----

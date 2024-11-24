@@ -1,8 +1,6 @@
 ---
 title: Who Do You Write For
 date: 2014-11-09
-thumbnail: blog/who-do-you-write-for/images/
-images: ["blog/who-do-you-write-for/images/"]
 categories: ["general"]
 tags: ["censorship", "emotions", "essays", "freshly-pressed", "inspiration", "journals", "life", "on-writing", "questions", "reading", "thoughts", "writers", "writing", "writing-advice"]
 series: []
@@ -25,5 +23,3 @@ Still, I sometimes feel as though writing is an active rebellion to establish yo
 Perhaps it is such that everything you write has a different 'one person' for it. Perhaps your essays about your desires and your thoughts are meant only to be shared with your loved ones. Perhaps your fiction is for your boyfriends, your poems for your self. Maybe it is so. We are, after all, a compartmentalized people. But some of the best writing I ever did existed only for the duration of a semester, was written only for one person, my professor. Some of that writing was personal, most of it was fiction. But it was easier to write knowing there was no one to offend, no one to look out for, no identities to change, no truths to bend. All stories were equal. And I realized that to achieve something like that was not only possible, it singularly boiled down to just one question: who do you write for?
 
 <br>
-
----

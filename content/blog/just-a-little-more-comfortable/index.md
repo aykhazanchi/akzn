@@ -1,8 +1,6 @@
 ---
 title: Just a Little More Comfortable
 date: 2014-08-27
-thumbnail: blog/just-a-little-more-comfortable/images/
-images: ["blog/just-a-little-more-comfortable/images/"]
 categories: ["general"]
 tags: ["ambition", "change", "college", "commencement", "entrepreneurship", "graduation", "life", "social", "social-entrepreneurship", "systems", "world"]
 series: []
@@ -31,5 +29,3 @@ I found people who were willing to discuss bigger things. I found them willing t
 As I think about this more and more, wondering what I can do to effect change in my own way now that I've left this electrifying atmosphere behind, I am reminded of a brilliant point made by the same professor: Let's allow ourselves to rise above the talk and focus simply on making the world just a little more comfortable.
 
 <br>
-
----

@@ -1,8 +1,6 @@
 ---
 title: Reading - May 2018
 date: 2018-05-31
-thumbnail: blog/reading-may-2018/images/
-images: ["blog/reading-may-2018/images/"]
 categories: ["general"]
 tags: ["art", "bill-gates", "collections", "internet-trends", "mary-meeker", "new-york-times", "nyt", "on-photography", "photography", "social", "stratechery", "tech", "teju-cole", "trends", "world"]
 series: ["Collections"]
@@ -27,5 +25,3 @@ _[// What Does It Mean to Look at This?](https://mobile.nytimes.com/2018/05/24/m
 "Photographs of atrocity always confront us with questions of inequality. But these questions can no longer simply be reduced to 'Why them and why not us?' If, as Azoulay argues, photography deterritorializes citizenship, then these images accuse, they interrogate and they put us in the same boat with those we are looking at. 'What have we done,' they ask us, 'to create the conditions in which others, our fellow citizens, undergo these unspeakable experiences?'"
 
 <br>
-
----

@@ -14,5 +14,3 @@ draft: false
 Coursey is an interactive app that lets you find and review cool KTH courses. Coursey was built as part of a class project for DH2642 - Interaction Programming and the Dynamic Web. Coursey is available to use at : coursey.herokuapp.com (Note: This is not a production-ready deployment and is just for fun.)
 
 <br>
-
----

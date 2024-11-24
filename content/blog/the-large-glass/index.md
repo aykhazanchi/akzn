@@ -1,7 +1,6 @@
 ---
 title: The Large Glass
 date: 2022-09-19T13:29:19+02:00
-images: ["blog/the-large-glass/images/"]
 categories: ["general"]
 tags: ["general"]
 series: []
@@ -29,7 +28,4 @@ Quelle chance!
 The Bride Stripped Bare by Her Bachelors, Even (The Large Glass). (1915-23). Oil, varnish, lead foil, lead wire, and dust on two glass panels. 109 1/4" x 69 1/4". Philadelphia Museum of Art.
 
 
-
 <br>
-
----

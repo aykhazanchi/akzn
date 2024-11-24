@@ -1,8 +1,6 @@
 ---
 title: The Time Feels Right Only to Move
 date: 2014-11-17
-thumbnail: blog/the-time-feels-right-only-to-move/images/
-images: ["blog/the-time-feels-right-only-to-move/images/"]
 categories: ["general"]
 tags: ["cities", "growing", "hustle", "learning-essay", "life", "living", "new-york", "patience", "philadelphia", "public-transportation", "satisfaction", "suburbs", "sunday", "towns", "urgency", "value"]
 series: []
@@ -33,5 +31,3 @@ Even though I live 10 minutes outside the city, it does not satisfy me. In a 10 
 But now in this moment, at the crossroads of twenty-something in our lives, the time feels right only to move, to walk fast and steady onto new adventures, towards new streets and rising buildings, past oak trees and park benches that'll still be around when we're older, past coffee shops without an ambiance, past the chandeliers of the past and the buildings reaching for the stars and the people willing to stop under them. Pause? For what? Someday, some of us will find that we've had enough of the telling. The yearning to constantly be experiencing thrill, adventure, moments. To learn that stories have a way of forming themselves even in the most mundane of moments, but now is only the time to walk out of the bar and stand, for a moment, under the street lights on a cold winter night and think of all the new adventures that are only a few blocks, within our reach, within our dime. No buses, no cars, no time to account for other than our own.
 
 <br>
-
----

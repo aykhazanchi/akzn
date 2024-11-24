@@ -17,5 +17,3 @@ I am currently:
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 
 <br>
-
----

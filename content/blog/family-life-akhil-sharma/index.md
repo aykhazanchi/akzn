@@ -1,8 +1,6 @@
 ---
-title: Family Life Akhil Sharma
+title: Family Life - Akhil Sharma
 date: 2015-05-14
-thumbnail: blog/family-life-akhil-sharma/images/
-images: ["blog/family-life-akhil-sharma/images/"]
 categories: ["general"]
 tags: ["akhil-sharma", "books", "coming-of-age", "disability", "families", "family-life", "grief", "immigrant", "loss", "love", "reading"]
 series: []
@@ -10,7 +8,7 @@ DisableComments: true
 draft: false
 ---
 
-[![Image of book](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415582645i/22253764.jpg)](https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1415582645i/22253764.jpg)
+{{< figure src="/blog/family-life-akhil-sharma/images/family_life.jpg" alt="Book Cover" width="40%" height="40%" >}}
 
 How do you even begin to write about a book that is so painfully honest that it can be tender and heartbreaking in the same sentence. In its most mundane parts. This is the story of Ajay growing up envying his older brother, Birju, in every sense of the word. Once when visiting their grandparents Birju is the one to inform them that their father has sent tickets for the family to emigrate to America. Immediately Ajay is in a state of resentment for not having been the 'bearer' of this good news. Everything Birju does seems flawless and infinitely wise to Ajay. But an event that renders Birju entirely disabled changes their lives forever. It's comforting to put the book in that box - to call it a story of loss and dealing with that loss, but it turns out to be so much more.
 
@@ -24,7 +22,7 @@ The plot here is simply of time passing. We grow with Ajay and his thoughts. Liv
 > 
 > "Everybody thinks strange thoughts," God said. "It doesn't matter if you think something."
 > 
-> "When I was walking around in the schoolyard and you asked if I would switch places with Birju, I thought, _No._"
+> "When I was walking around in the schoolyard and you asked if I would switch places with Birju, I thought, <i>No</i>."
 
 There is a constant underlying guilt that Ajay -- the narrator -- lives with as he grows with his brother, trying to learn how to love him again. It is so painfully honest. I've often wondered where this capacity to love endlessly come from - where one spends their days caring for their own without any expectation of reward or return. Surely there is a sense of duty here, but in that duty, is there always some form of love?
 
@@ -41,5 +39,3 @@ But this is not all about grief and loss. There are tender moments of communitie
 Pick it up if you can. This is a book for the shelf.
 
 <br>
-
----

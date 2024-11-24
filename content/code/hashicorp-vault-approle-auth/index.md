@@ -99,5 +99,3 @@ token_meta_role_name    jenkins-role
 We're now successfully logged in as the `jenkins-role` app role.
 
 <br>
-
----

@@ -1,11 +1,8 @@
 ---
 title: Building Habits
 date: 2016-08-07
-thumbnail: blog/building-habits/images/Habitloop.png
-images: [""]
 categories: ["general"]
-tags: ["habits", "learning", "life", "mit", "models", "planning", "productivity", "reward", "routine", "time", "triggers"]
-series: []
+tags: ["habits", "learning", "models", "productivity", "reward", "routine","triggers"]
 DisableComments: true
 draft: false
 ---
@@ -17,12 +14,9 @@ As part of my series of learning something new every week (another habit I'm try
 I've also used a lot of apps and productivity/habit tools and these, I've come to believe, are at best support systems and not something you can completely rely on. They're nice to mark a checkbox at the end of the day or keep your "habit chain" from breaking but they're not actually going to get you to the gym. That part is still on you.
 
 This brings me to a model I've been thinking a lot about, particularly because I've found myself doing something similar naturally. I learned about this model while reading The Power of Habit by Charles Duhigg. It boils down essentially to this simple yet revealing diagram drawn by researchers at MIT -
-
  
+{{< figure src="/blog/building-habits/images/Habitloop.png" alt="The Habit Loop" caption="The Habit Loop"  width="50%" height="50%" >}}
 
-![The Habit Loop](/blog/building-habits/images/Habitloop.png)
-
- 
 Simply put, in order to change habits -
 
 - Understand the routine first and foremost
@@ -34,13 +28,7 @@ Simply put, in order to change habits -
 - Make an alternative plan when those triggers take place
     - The idea is not to remove the trigger but to replace the routine set off by that trigger with a new and better routine
 
-
-* * *
+*** 
 
 Image source: http://habitica.wikia.com/wiki/The\_Habit\_Loop
-
-
-
 <br>
-
----

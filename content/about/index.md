@@ -11,6 +11,3 @@ At the moment, I am based out of Stockholm, Sweden where I do Cloud, Infra, and 
 In Sweden, I have previously worked at Hopsworks (Master Thesis), IBM (as part of a selective group of students picked through the IBM Bluesmarts program), and KTH (Teaching Assistant). Before that, I was a Senior Cloud Engineer at Oracle where I worked on the CEGBU Cloud Engineering team on cloud platform and DevOps projects both in Philadelphia (2014-2017) and India (2017-2021). In Oracle, I was also a technical lead for multiple projects across different teams.
 
 <br>
-<br>
-
----

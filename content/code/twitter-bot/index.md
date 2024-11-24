@@ -13,5 +13,3 @@ Sometime back in 2017 I used a spare raspberry pi to take photos of the Philly S
 
 
 <br>
-
----

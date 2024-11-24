@@ -1,8 +1,6 @@
 ---
 title: What I Learned in One Week of Zero Carbs
 date: 2016-01-18
-thumbnail: blog/what-i-learned-in-one-week-of-zero-carbs/images/
-images: ["blog/what-i-learned-in-one-week-of-zero-carbs/images/"]
 categories: ["general"]
 tags: ["carbs", "diet", "experiment", "food", "low-carbs", "nutrition", "food hack"]
 series: []
@@ -37,5 +35,3 @@ Couple of pointers and things that I noticed:
 - Maintaining a zero carb diet can get expensive - you have no "filler" foods so your general entrée consumption increases.
 
 <br>
-
----

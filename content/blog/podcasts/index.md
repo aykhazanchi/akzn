@@ -1,8 +1,6 @@
 ---
 title: Podcasts
 date: 2016-11-21
-thumbnail: blog/podcasts/images/
-images: ["blog/podcasts/images/"]
 categories: ["general"]
 tags: ["creativity", "podcasts", "writing"]
 series: []
@@ -17,5 +15,3 @@ I've been looking for creative outlets for a while now and I especially wanted t
 Later in the day I got some more input from friends about which podcasts to follow so I've signed up for a few more - Planet Money, Stuff You Should Know,  Historical India, Song Exploder, Tiny Desk Concerts (audio). Some of these I've already heard before. Either way, I plan to try out a few episodes from each of these over the next week and then write about my experience.
 
 <br>
-
----

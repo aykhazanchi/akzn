@@ -1,8 +1,6 @@
 ---
 title: A Thought on Traditions
 date: 2014-09-02
-thumbnail: blog/a-thought-on-traditions/images/
-images: ["blog/a-thought-on-traditions/images/"]
 categories: ["general"]
 tags: ["general", "traditions", "culture"]
 series: []
@@ -23,5 +21,3 @@ The idea of holding on to tradition is the idea of holding on to you as you've k
 Over time, I've learned and practiced enough Kashmiri that I can hold a short conversation, yet it's nowhere near enough to keep this dying language alive. There was even a short phase where I asked my grandmothers to speak to me only in Kashmiri. That didn't last long. But now I understand that my initial desire to learn Kashmiri had little to do with languages, just as our prayer on Diwali had little to do with whether we actually believed in gods or not, and had everything to do with finding a bit of ourselves in our rituals.
 
 <br>
-
----

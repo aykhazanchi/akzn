@@ -1,8 +1,6 @@
 ---
 title: The Poems in My Pocket
 date: 2015-04-30
-thumbnail: blog/the-poems-in-my-pocket/images/
-images: ["blog/the-poems-in-my-pocket/images/"]
 categories: ["general"]
 tags: ["favorite-lines", "poem-in-your-pocket", "poems", "poetry-2", "quotes", "reading"]
 series: []
@@ -119,5 +117,3 @@ Some lines, even when devoid of any context, are just haunting. This is one of t
 Send paper, friend, these are the last pages of my journal I'm writing on.
 
 <br>
-
----

@@ -1,11 +1,9 @@
 ---
 title: Weight
 date: 2015-04-11
-thumbnail: blog/weight/images/
-images: ["blog/weight/images/"]
 categories: ["fiction"]
-tags: ["100dayproject", "100shortscenes", "life", "memories", "relationships", "writing"]
-series: []
+tags: ["100shortscenes", "life", "memories", "relationships", "writing"]
+series: ["100shortscenes"]
 DisableComments: true
 draft: false
 ---
@@ -31,5 +29,3 @@ I'm tired, she sighed.
 We sat there until the fire went out, the two of us gazing at the black cloud, which had, by then, turned into a thin line of smoke, the moments of our past rising free in the air.
 
 <br>
-
----

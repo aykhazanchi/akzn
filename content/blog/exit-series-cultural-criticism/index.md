@@ -1,8 +1,6 @@
 ---
 title: Exit Series - Cultural Criticism
 date: 2017-07-09
-thumbnail: blog/exit-series-cultural-criticism/images/
-images: ["blog/exit-series-cultural-criticism/images/"]
 categories: ["exit-series"]
 tags: ["books", "cultural-criticism", "culture", "exit-series", "hilton-als", "wandering", "white-girls"]
 series: ["Exit Series"]
@@ -16,10 +14,4 @@ In the bookstore, I am listening in on a conversation between the staff and a pr
 
 I browse through some books on design and art -- genres I've been interested in lately -- but since I didn't come here to buy anything I end up leaving soon after.
 
-* * *
-
-This post is part of [Exit Series](http://akzn.me/blog/category/exit-series/).
-
 <br>
-
----

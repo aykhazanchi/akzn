@@ -1,8 +1,6 @@
 ---
 title: The Fragmented Marketplace for Education Information
 date: 2015-10-29
-thumbnail: blog/the-fragmented-marketplace-for-education-information/images/
-images: ["blog/the-fragmented-marketplace-for-education-information/images/"]
 categories: ["general"]
 tags: ["india","education", "higher ed", "admissions"]
 series: []
@@ -19,5 +17,3 @@ Which brings me to my main point - why is the market for information related to 
 I've tried to answer these questions for those who reach out to me but it is often hard to base your experience on only one or two other people's experience. I've often pointed people to sites like collegeboard.com and others that list out detailed information about universities but numbers don't make up the full picture. Attending school in Massachusetts is quite a ways different than doing the same program in Iowa but there is no way for someone who's never been to either of those states to know that difference, or to even know the extent of that difference. I'm sure there are people here from other countries who've had their peers, friends, and/or relatives question them about 'life' in the States. I'm certainly getting a lot of requests for information about what life is like and how to proceed forward once you've decided you want to come to the States. All of this leads me to believe that this field of education-guidance (for lack of a better term) -- of providing information that is more than just numbers -- has a lot of demand and not enough quality supply.
 
 <br>
-
----

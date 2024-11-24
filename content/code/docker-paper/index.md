@@ -20,5 +20,3 @@ Containerization offers many benefits to developers such as ease of deployment, 
 [First version of final report](https://drive.google.com/file/d/1D9dVtzgL_clhaT_QjRUC-28xaUVD8AzV/view "PDF")
 
 <br>
-
----

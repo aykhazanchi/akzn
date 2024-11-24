@@ -1,7 +1,6 @@
 ---
 title: The Umesh Chronicles
 date: 2024-11-20T22:28:05+01:00
-images: ["blog/the-umesh-chronicles/images/"]
 categories: ["general"]
 tags: ["the umesh chronicles", "stockholm film festival", "movies"]
 series: []

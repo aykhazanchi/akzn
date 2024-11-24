@@ -48,5 +48,3 @@ Last updated: {{< param lastmod >}}
 
 
 <br>
-
----

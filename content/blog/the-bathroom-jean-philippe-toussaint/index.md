@@ -1,7 +1,6 @@
 ---
 title: The Bathroom - Jean Philippe Toussaint
 date: 2015-05-08
-images: ["blog/the-bathroom-jean-philippe-toussaint/images/"]
 categories: ["general"]
 tags:  ["books", "existential", "french", "french-literature", "jean-philippe-toussaint", "reading", "reviews", "the-bathroom"]
 series: []
@@ -23,5 +22,3 @@ I'm not sure what to make of this book. The writing is good, even great at certa
 \* I'm not sure if Edmondsson was the wife or the girlfriend because the narrator at one point refers to her as his wife but the summary on the back cover refers to Edmondsson as his girlfriend. Not sure if this is all an elaborate joke at this point, or that I just didn't get the point of the book.
 
 <br>
-
----

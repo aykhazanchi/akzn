@@ -10,5 +10,3 @@ draft: false
 {{< figure src="/travel/st-kilda-pier/st-kilda-pier.png" alt="st-kilda-pier" width="50%" height="50%" >}}
 
 <br>
-
----

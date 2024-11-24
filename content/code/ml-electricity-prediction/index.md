@@ -48,7 +48,7 @@ inference interfaces is implemented in [proj](.), and the main parts are briefly
 
 ### Feature pipeline 
 
-Implemented in [`feature.ipynb`](feature.ipynb) as a Jupyter notebook. The features used for training and prediction
+Implemented in [`feature.ipynb`](https://github.com/aykhazanchi/id2223-scalable-ml/blob/master/proj/feature.ipynb) as a Jupyter notebook. The features used for training and prediction
 are daily demand for the NY area (prediction target), daily average temperature for the same area, day and month 
 (represented as an integer feature) and bank holiday status (true or false, represented as a binary feature). 
 
@@ -68,7 +68,7 @@ instances) is shown below.
 
 ### Training pipeline
 
-Implemented in [`training.ipynb`](training.ipynb) as Jupyter notebook. The model used for the predictions is 
+Implemented in [`training.ipynb`](https://github.com/aykhazanchi/id2223-scalable-ml/blob/master/proj/training.ipynb) as Jupyter notebook. The model used for the predictions is 
 based on the XGBoost Regressor implemented in the 
 [xgboost](https://xgboost.readthedocs.io/en/stable/python/python_intro.html) Python package. The model is trained 
 on the historic demand and weather data prepared in the [Feature pipeline](#feature-pipeline). 
@@ -87,12 +87,10 @@ set, is around 14GWh (around 3-4%) which seems to be in line with EIA's own fore
 
 ### Daily feature pipeline
 
-Implemented as a serverless function in [`feature-daily.py`](feature-daily.py). The daily feature pipeline runs on a daily basis as a scheduled function on [Modal](https://modal.com). The pipeline obtains daily demand and demand forecast from two days before the date of the run (for example, a run on Jan 15th will fetch values for Jan 13th). The EIA API is two days behind in terms of updating the actual demand which we require in order to ascertain the accuracy of our model's predictions. The feature pipeline also obtains the average temperature for that date and checks on whether the date is a bank holiday or not. Once all these features are collected and merged into a data frame it is then uploaded to the feature store.
+Implemented as a serverless function in [`feature-daily.py`](https://github.com/aykhazanchi/id2223-scalable-ml/blob/master/proj/feature-daily.py). The daily feature pipeline runs on a daily basis as a scheduled function on [Modal](https://modal.com). The pipeline obtains daily demand and demand forecast from two days before the date of the run (for example, a run on Jan 15th will fetch values for Jan 13th). The EIA API is two days behind in terms of updating the actual demand which we require in order to ascertain the accuracy of our model's predictions. The feature pipeline also obtains the average temperature for that date and checks on whether the date is a bank holiday or not. Once all these features are collected and merged into a data frame it is then uploaded to the feature store.
 
 ### Daily batch pipeline
 
-Implemented as a serverless function in [`batch-daily.py`](batch-daily.py). The daily batch inference pipeline runs on a daily basis as a scheduled function on [Modal](https://modal.com). The pipeline pulls the feature group from the feature store and obtains the latest feature set added. The batch inference runs a prediction on this latest feature set and we compare the accuracy of our model by evaluating the Mean Absolute Error between the prediction and the actual demand. As part of the batch daily pipeline we also pull the EIA forecast for that date from the API and display the predicted demand, actual demand, and the EIA forecasted demand as part of our monitoring UI. This is done for evaluation purposes to compare how close our model is to the EIA's own forecast model. We find in some cases our model's predicted demand value is closer to the actual demand than the EIA forecast. Along with the historical prediction chart, the batch pipeline also creates the MAE trend chart and a table with the historical prediction records. All of this is then displayed on the Monitoring UI.
+Implemented as a serverless function in [`batch-daily.py`](https://github.com/aykhazanchi/id2223-scalable-ml/blob/master/proj/batch-daily.py). The daily batch inference pipeline runs on a daily basis as a scheduled function on [Modal](https://modal.com). The pipeline pulls the feature group from the feature store and obtains the latest feature set added. The batch inference runs a prediction on this latest feature set and we compare the accuracy of our model by evaluating the Mean Absolute Error between the prediction and the actual demand. As part of the batch daily pipeline we also pull the EIA forecast for that date from the API and display the predicted demand, actual demand, and the EIA forecasted demand as part of our monitoring UI. This is done for evaluation purposes to compare how close our model is to the EIA's own forecast model. We find in some cases our model's predicted demand value is closer to the actual demand than the EIA forecast. Along with the historical prediction chart, the batch pipeline also creates the MAE trend chart and a table with the historical prediction records. All of this is then displayed on the Monitoring UI.
 
 <br>
-
----

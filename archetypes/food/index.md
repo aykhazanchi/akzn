@@ -10,5 +10,3 @@ draft: true
 {{< figure src="/food/lappis-meals/{{ .Name }}/images/{{ .Name }}.jpeg" alt="{{ .Name }}" width="50%" height="50%" >}}
 
 <br>
-
----

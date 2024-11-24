@@ -1,8 +1,6 @@
 ---
 title: Keeping Count
 date: 2019-07-02
-thumbnail: blog/keeping-count/images/
-images: ["blog/keeping-count/images/"]
 categories: ["general"]
 tags: ["count", "current-affairs", "current-events", "dog", "elections", "freshly-pressed", "india", "indian-politics", "keeping-count", "modi", "news", "process", "reflecting", "reflections", "social", "trump", "world", "world-politics", "writing", "writing-process"]
 series: []
@@ -10,9 +8,7 @@ DisableComments: true
 draft: false
 ---
 
-![Clouds over Heritage City, June 21](images/IMG_20190621_224218_737-3-819x1024.jpg)
-
-Heritage City, June 21
+{{< figure src="/blog/keeping-count/images/heritage.jpg" alt="Clouds over Heritage City, June 21" caption="Clouds over Heritage City, June 21" width="50%" height="50%" >}}
 
 I've been in a gigantic creative block for a long time. Pretty sure I'm in the writing dungeons by now. I'm not sure I even remember the last time I wrote something longer than 250 words that wasn't either an email, documentation on code, or something required for work. Recently though something happened that got me into it again. For the last week or so I've waded into the waters privately to see how cold and frigid my skills have become. They're rusty, to put it mildly, but it doesn't matter. At least not for now.
 
@@ -27,5 +23,3 @@ I believe a lot of the dissonance is simply due to the fact that we're so deeply
 So I'm reading more. Reflecting more. I'm trying to write again. I've been taking a lot of pictures this year. Recording, reflecting, revising. Channeling my effort in a different direction -- hopefully something more positive than just outrage and hot-takes and endless debates with people who have no skin in the game, so to speak. Trying, at least. This is an attempt to start to put my thoughts down as I try to figure them out. Minimal to no editing or refactoring or filtering on this. Just keeping count.
 
 <br>
-
----

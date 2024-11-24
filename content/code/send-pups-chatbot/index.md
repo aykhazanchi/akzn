@@ -115,5 +115,3 @@ Note: The trial account has a limited free balance that you can use to send and 
 See a video recording [here](https://photos.app.goo.gl/mHabVm2H1EahHwDN7).
 
 <br>
-
----

@@ -1,8 +1,6 @@
 ---
 title: Exit Series - Ethos
 date: 2018-03-03
-thumbnail: blog/exit-series-ethos/images/
-images: ["blog/exit-series-ethos/images/"]
 categories: ["exit-series"]
 tags: ["art", "censorship", "culture", "ethos", "exit-series", "freshly-pressed", "history", "monologue", "series-writing", "suppression", "tyranny", "writing"]
 series: ["Exit Series"]
@@ -16,10 +14,4 @@ Summon the strength to listen for it is your only freedom. Listen as if your lif
 
 These are people born to bear burden. Speak of them highly for they carry your voice, your words, your art, silent and distant, like the sound of rocks ricocheting off a precipice.
 
-* * *
-
-This post is part of [Exit Series](http://akzn.me/blog/category/exit-series/).
-
 <br>
-
----

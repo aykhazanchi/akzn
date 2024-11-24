@@ -1,11 +1,9 @@
 ---
 title: Boy
 date: 2015-04-16
-thumbnail: blog/boy/images/
-images: ["blog/boy/images/"]
 categories: ["fiction"]
-tags: ["100dayproject", "100shortscenes", "children", "emotions", "growth", "writing"]
-series: []
+tags: ["100shortscenes", "children", "emotions", "growth", "writing"]
+series: ["100shortscenes"]
 DisableComments: true
 draft: false
 ---
@@ -27,5 +25,3 @@ You did it buddy! Way to go, cheered his father as he wobbled from one foot to a
 Soon, the fear subsides, but he's found a new feeling. He rises higher over his father's head using his shoulders as supports, and looks out over the park as if it were his own small kingdom. His lips break into a soft smile.
 
 <br>
-
----

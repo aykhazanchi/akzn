@@ -1,11 +1,9 @@
 ---
 title: No Game
 date: 2015-04-08
-thumbnail: blog/no-game/images/
-images: ["blog/no-game/images/"]
 categories: ["fiction"]
-tags: ["100daysproject", "100shortscenes", "adolescence", "emotions", "friends", "growing-up", "life", "teenage"]
-series: []
+tags: ["100shortscenes", "adolescence", "emotions", "friends", "growing-up", "life", "teenage"]
+series: ["100shortscenes"]
 DisableComments: true
 draft: false
 ---
@@ -49,5 +47,3 @@ Ok, see you at night? I ask, walking away shuffling my feet in the grass, and lo
 He puts out the joint and stands up. Right O' clock tonight, then, he calls out as he walks away.
 
 <br>
-
----

@@ -1,8 +1,6 @@
 ---
 title: The Gap in Learning Code and Building With Code
 date: 2016-01-23
-thumbnail: blog/the-gap-in-learning-code-and-building-with-code/images/
-images: ["blog/the-gap-in-learning-code-and-building-with-code/images/"]
 categories: ["general"]
 tags: ["coding", "freecodecamp", "learn-to-code", "learning", "learning-code", "programming", "software", "teamtreehouse"]
 series: []
@@ -24,14 +22,8 @@ When we learn a language we memorize things and only later learn how everything 
 
 So it seems to me that the problem with a lot of these tutorials is that they teach the rules of the language before telling people what the words are, what they can do, and how they can be used right _now_. This is all more important to a beginner than the in-depth stuff. When we learned the French words for hello, good morning, how are you, and good bye we were able to use them immediately. We walked in the next day and everyone said Bonjour instead of Hello. If we'd learned the words for cat and dog in the first class, we would have remembered them, sure, but we wouldn't know what to do with that knowledge. You just need more context to use cat/dog in a sentence. And so, on the first day, it just wasn't directly relevant. Hello was relevant. It could be used immediately. It didn't require knowing anything else.
 
-![](images/171.jpg) Every new programmer goes through this phase.
-
- 
-
 I've spent a lot of time looking for something like this and I think [Freecodecamp](http://freecodecamp.com/) and [Team Treehouse](https://teamtreehouse.com) are the two that tend to come close to what I'm trying to articulate. I'm not a very good video learner (I like reading more) but every now and then I've used Treehouse to recall something I'd learned earlier. And it helps that a lot of their stuff is very industry relevant (dev tools, etc.) Similarly, Freecodecamp is something that provides just enough knowledge to help you build a project. Their strongest aspect is the near 24/7 online community that is there to help anyone stuck. In both cases, at the end of the day, you're learning to build things before you know how to build things.
 
 When you want to paint a room, you learn just enough about painting to get the job done. What kind of brush you need, what kind of paint, how to move the brush. You don't sit through a class of aesthetics and color theory simply to paint a room. This practice of knowing _just enough_ is what I think can bridge the gap between learning and building, and maybe, just maybe, remove that early dissonance new coders face. If a service is able to master the right balance between imparting knowledge and providing rote instructions to build something interesting, they'll be able to provide real value in this field.
 
 <br>
-
----
