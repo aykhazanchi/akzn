@@ -6,7 +6,7 @@ categories: ["general"]
 tags: ["the umesh chronicles", "stockholm film festival", "movies"]
 series: []
 DisableComments: true
-draft: true
+draft: false
 ---
 
 I recently watched The Umesh Chronicles at the Stockholm Film Festival. It is a coming-of-age story of Radha, a young Indian (Kashmiri pandit) girl in a middle-class family in the 80s. Even from a young age, Radha is shown to be sharp yet pensive. The movie feels at times like a long dream sequence, exploring the interplay of memory, history, and social structures, and the weight they tend to carry. The pacing throughout the movie, both of the camera and the characters, feels deliberate with long, slow takes that immerse the viewer in the daily rhythms of the family. There are moments that feel poignant, such as the portrayal of Radha's summer vacation at her grandparents home. Growing up in a time where the internet hadn't yet fully penetrated daily life, I was reminded how as children the best entertainment in the Indian summer used to be to just walk around with your siblings to either find or create entertainment, something that today feels almost like a bygone activity. I loved also the portrayal of the older characters randomly breaking out into song while going about their daily lives, something that might seem like a Bollywood trope but is actually a very familiar experience growing up in a Kashmiri pandit household. When the grandmother casually gestures in Kashmiri phrases or says to her granddaughter, "wal shong me nish" (come, sleep with me") I felt transported to my own grandparents home. While Kashmiriyat is not the focus of the film by any means, these small details of a Kashmiri household make the lives of the characters feel genuine and make the movie whole.
