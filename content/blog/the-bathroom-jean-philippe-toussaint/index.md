@@ -1,7 +1,6 @@
 ---
-title: The Bathroom Jean Philippe Toussaint
+title: The Bathroom - Jean Philippe Toussaint
 date: 2015-05-08
-thumbnail: blog/the-bathroom-jean-philippe-toussaint/images/
 images: ["blog/the-bathroom-jean-philippe-toussaint/images/"]
 categories: ["general"]
 tags:  ["books", "existential", "french", "french-literature", "jean-philippe-toussaint", "reading", "reviews", "the-bathroom"]
@@ -18,7 +17,8 @@ The Bathroom is about an unnamed narrator in Paris who spends his days living in
 
 I'm not sure what to make of this book. The writing is good, even great at certain parts, but there's a point where the narrator, accompanying his doctor and his doctor's wife to a tennis match, stares into a mirror at his dimly-lit face and asks himself: "what was I doing here?" There were multiple points in the book where I had the same question.
 
-* * *
+<br>
+<br>
 
 \* I'm not sure if Edmondsson was the wife or the girlfriend because the narrator at one point refers to her as his wife but the summary on the back cover refers to Edmondsson as his girlfriend. Not sure if this is all an elaborate joke at this point, or that I just didn't get the point of the book.
 

@@ -10,9 +10,9 @@ Last updated: {{< param lastmod >}}
 
 I am currently:
 
-- Learning Go and ink-sketching
 - Living in Stockholm, Sweden since August, 2021
 - Working in the [cloud](https://volumental.com)
+- Learning Swedish
 
 This page is inspired by Derek Sivers' [nownownow](https://nownownow.com/about) project.
 
